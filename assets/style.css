@@ -46,15 +46,16 @@ header.site.scrolled::before{background:rgba(14,13,13,.94)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
 .brand{display:flex;align-items:center;gap:.7rem;color:#fff}
 .brand img{height:46px;width:auto}
+.brand span{white-space:nowrap}
 .brand b{font-family:var(--serif);font-size:1.2rem;letter-spacing:.02em}
 .brand small{display:block;font-size:.68rem;color:var(--gold-2);letter-spacing:.18em;text-transform:uppercase}
 .menu{display:flex;gap:1.6rem;list-style:none;align-items:center}
-.menu a{color:#eae3d4;font-weight:600;font-size:.93rem;position:relative;padding:.3rem 0}
+.menu a{white-space:nowrap;color:#eae3d4;font-weight:600;font-size:.93rem;position:relative;padding:.3rem 0}
 .menu a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--gold);transition:var(--ease)}
 .menu a:hover{color:var(--gold-2)}.menu a:hover::after{width:100%}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:12px;width:44px;height:44px;color:#fff;cursor:pointer}
 .burger span{display:block;width:20px;height:2px;background:var(--gold-2);margin:4px auto;transition:var(--ease)}
-@media (max-width:980px){
+@media (max-width:1200px){
   .burger{display:block}
   .menu{position:fixed;inset:0 0 0 auto;width:min(320px,85vw);flex-direction:column;align-items:flex-start;background:var(--ink-2);padding:90px 28px;gap:1.2rem;transform:translateX(100%);visibility:hidden;transition:var(--ease);box-shadow:var(--shadow-lg)}
   .menu.open{transform:none;visibility:visible}
