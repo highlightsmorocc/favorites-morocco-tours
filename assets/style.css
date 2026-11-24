@@ -447,3 +447,31 @@ header.fh.is-scrolled .fh-burger{background:rgba(255,255,255,.12);border-color:r
 header.fh.is-scrolled .fh-burger span{background:#fff}
 header.fh.is-scrolled .fh-burger[aria-expanded="true"]{background:#fff;border-color:var(--fh-line)}
 header.fh.is-scrolled .fh-burger[aria-expanded="true"] span{background:var(--fh-navy)}
+
+/* =========================================================
+   Language dropdown button (next to Book Your Tour)
+   ========================================================= */
+.fh-top .fh-lang{display:none}
+.fh-langdd{position:relative;flex-shrink:0}
+.fh-langbtn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 14px 0 12px;border-radius:999px;border:1px solid var(--fh-line);background:#fff;color:var(--fh-navy);font:700 13px/1 var(--fh-font);letter-spacing:.08em;cursor:pointer;transition:var(--fh-ease)}
+.fh-langbtn>svg:first-child{width:22px;height:15px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.fh-langbtn .fh-lchev{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s ease}
+.fh-langbtn:hover,.fh-langbtn[aria-expanded="true"]{border-color:var(--fh-amber);box-shadow:0 6px 18px rgba(224,158,0,.22);transform:translateY(-1px)}
+.fh-langbtn[aria-expanded="true"] .fh-lchev{transform:rotate(180deg)}
+.fh-langmenu{position:absolute;right:0;top:calc(100% + 12px);z-index:70;min-width:210px;list-style:none;margin:0;padding:8px;background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--fh-line);border-radius:16px;box-shadow:0 20px 50px rgba(2,48,71,.18);opacity:0;visibility:hidden;transform:translateY(8px);transition:var(--fh-ease)}
+.fh-langmenu::before{content:"";position:absolute;top:0;left:22px;right:22px;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,var(--fh-amber-l),var(--fh-amber-d))}
+.fh-langdd.is-open .fh-langmenu{opacity:1;visibility:visible;transform:none}
+.fh-langmenu a{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;color:var(--fh-navy);text-decoration:none;font:600 14px/1 var(--fh-font);transition:var(--fh-ease)}
+.fh-langmenu a svg{width:24px;height:16px;border-radius:3px;flex-shrink:0;box-shadow:0 0 0 1px rgba(0,0,0,.08);transition:var(--fh-ease)}
+.fh-langmenu a small{margin-left:auto;font:700 11px/1 var(--fh-font);letter-spacing:.12em;color:var(--fh-muted)}
+.fh-langmenu a:hover{background:rgba(255,183,3,.14)}
+.fh-langmenu a:hover svg{transform:scale(1.1) rotate(-4deg)}
+.fh-langmenu a[aria-current]{background:linear-gradient(135deg,rgba(255,215,106,.4),rgba(224,158,0,.18))}
+.fh-langmenu a[aria-current] small{color:var(--fh-navy)}
+header.fh.is-scrolled .fh-langbtn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+@media (max-width:1100px){.fh-langbtn{height:46px}}
+@media (max-width:640px){
+  .fh-langdd{margin-left:auto}
+  .fh-burger{margin-left:0}
+  .fh-langbtn{padding:0 10px;gap:6px}
+}
