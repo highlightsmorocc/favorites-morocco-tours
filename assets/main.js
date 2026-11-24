@@ -185,7 +185,43 @@
   var me = document.currentScript && document.currentScript.src;
   var assets = me ? me.replace(/main.js.*$/, "") : "";
   /* Photos stored in this repository (assets/). Add more: "part-of-tour-url": "file.jpg" */
-  var IMG = { "ait-ben-haddou-day-trip": "ait-ben-haddou-kasbah-morocco.jpg" };
+  var IMG = {
+      "2-days-tour-from-marrakech-to-zagora": "cards/zagora-oasis.jpg",
+      "3-days-tour-from-marrakech-to-desert": "cards/camels-merzouga.jpg",
+      "4-days-tour-from-marrakech-to-the-sahara-desert": "cards/caravan-sunset.jpg",
+      "5-days-tour-from-marrakech-to-the-sahara-desert": "cards/merzouga-dunes.jpg",
+      "6-days-tour-from-marrakech-to-the-sahara-desert": "cards/caravan-shadows.jpg",
+      "7-days-private-tour-from-marrakech-to-the-sahara-desert": "cards/sahara-camp-night.jpg",
+      "3-days-tour-from-marrakech-to-fes": "cards/marrakech-jemaa-el-fna.jpg",
+      "4-days-tour-from-marrakech-to-fes": "cards/fes-tannery.jpg",
+      "5-days-tour-from-marrakech-to-fes": "cards/fes-medina.jpg",
+      "12-day-tour-marrakech-to-sahara": "cards/chefchaouen.jpg",
+      "6-days-fes-to-marrakech-tour-mountains-desert-imperial-cities": "cards/chefchaouen-blue-alley.jpg",
+      "5-days-fes-to-merzouga-marrakech-tour": "cards/merzouga-dunes.jpg",
+      "4-days-desert-tour-from-fes-to-marrakech": "cards/caravan-sunset.jpg",
+      "4-days-desert-tour-from-fes-to-fes": "cards/fes-tannery.jpg",
+      "3-days-tour-from-fes-to-marrakech": "cards/sahara-camp-night.jpg",
+      "3-days-tour-from-fes-to-merzouga-sahara": "cards/camels-merzouga.jpg",
+      "6-days-tour-from-casablanca": "cards/casablanca-hassan-ii-mosque.jpg",
+      "7-days-private-tour-from-casablanca": "cards/fes-medina.jpg",
+      "8-days-private-tour-from-casablanca": "cards/chefchaouen.jpg",
+      "10-days-morocco-itinerary-from-casablanca": "cards/rabat-kasbah-udayas.jpg",
+      "15-days-tour-through-morocco-from-casablanca": "cards/essaouira.jpg",
+      "15-days-morocco-tour-from-tangier": "cards/tangier.jpg",
+      "12-days-tour-from-tangier": "cards/tangier-harbor.jpg",
+      "10-days-tour-from-tangier": "cards/chefchaouen-blue-alley.jpg",
+      "7-days-tour-from-tangier": "cards/rabat-kasbah-udayas.jpg",
+      "6-days-tour-from-tangier-to-marrakech": "cards/chefchaouen.jpg",
+      "3-days-desert-tour-from-errachidia": "cards/errachidia-oasis.jpg",
+      "4-days-tour-from-errachidia-to-marrakech": "cards/caravan-shadows.jpg",
+      "agafay-desert-quad-bike-and-camel-ride": "cards/agafay-desert.jpg",
+      "ouzoud-waterfalls-day-trip-from-marrakech": "cards/ouzoud-waterfalls.jpg",
+      "ourika-valley-day-trip-from-marrakech": "cards/ourika-valley.jpg",
+      "imlil-valley-day-trip-from-marrakech": "cards/imlil-atlas.jpg",
+      "essaouira-on-a-full-day-trip-from-marrakech": "cards/essaouira.jpg",
+      "volubilis-day-trip-from-fes": "cards/volubilis.jpg",
+      "ait-ben-haddou-day-trip-from-marrakech": "ait-ben-haddou-kasbah-morocco.jpg"
+  };
   var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
   document.querySelectorAll("a.card").forEach(function (c) {
     if (c.classList.contains("fc")) return;
@@ -206,13 +242,12 @@
     else { pts = [t[6], t[7], t[8]]; }
     daysEl.innerHTML = "<b>" + n + "</b><small>" + word + "</small>";
     var chipEl = document.createElement("span"); chipEl.className = "fc-chip"; chipEl.textContent = chip; thumb.appendChild(chipEl);
-    Object.keys(IMG).forEach(function (k) {
-      if (h.indexOf(k) > -1 && assets) {
-        var im = document.createElement("img"); im.className = "fc-img"; im.loading = "lazy"; im.decoding = "async";
-        im.src = assets + IMG[k]; im.alt = (c.querySelector("h3") || {}).textContent || "";
-        thumb.insertBefore(im, thumb.firstChild.nextSibling); thumb.classList.add("fc-has-img");
-      }
-    });
+    var slug = h.split("/").filter(Boolean).pop() || "";
+    if (IMG[slug] && assets) {
+      var im = document.createElement("img"); im.className = "fc-img"; im.loading = "lazy"; im.decoding = "async"; im.width = 900; im.height = 675;
+      im.src = assets + IMG[slug]; im.alt = (c.querySelector("h3") || {}).textContent || "";
+      thumb.insertBefore(im, thumb.firstChild.nextSibling); thumb.classList.add("fc-has-img");
+    }
     var ul = document.createElement("ul"); ul.className = "fc-pts";
     pts.forEach(function (p) { var li = document.createElement("li"); li.textContent = p; ul.appendChild(li); });
     if (routeEl) routeEl.after(ul); else more.before(ul);
