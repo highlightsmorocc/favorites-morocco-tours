@@ -370,3 +370,66 @@ body.fh-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .fh-top *,header.fh,header.fh *{transition:none!important;animation:none!important}
 }
+
+/* =========================================================
+   Favorites Morocco Tours — Premium hero (prefix fhh-)
+   ========================================================= */
+.fhh{position:relative;isolation:isolate;min-height:clamp(560px,86vh,860px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:90px 24px 150px;margin-bottom:84px;overflow:visible}
+.fhh-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;z-index:-2;animation:fhhZoom 18s ease-out both}
+.fhh::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,22,34,.62) 0%,rgba(2,22,34,.38) 45%,rgba(2,22,34,.72) 100%)}
+.fhh-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+@keyframes fhhZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes fhhUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.fhh-in{max-width:1000px;margin:0 auto;animation:fhhUp .9s ease both}
+.fhh-eyebrow{display:inline-flex;align-items:center;gap:14px;margin:0 0 22px;font:700 12.5px/1 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#FFB703}
+.fhh-eyebrow::before,.fhh-eyebrow::after{content:"";width:36px;height:1px;background:linear-gradient(90deg,transparent,#FFB703)}
+.fhh-eyebrow::after{transform:scaleX(-1)}
+.fhh h1{margin:0 0 22px;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(2.3rem,5.4vw,4.4rem);line-height:1.1;letter-spacing:.01em;color:#fff;text-wrap:balance;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.fhh h1 em{font-style:italic;color:#FFD76A}
+.fhh-lead{max-width:650px;margin:0 auto 34px;font:400 clamp(1rem,1.6vw,1.15rem)/1.7 "Plus Jakarta Sans",system-ui,sans-serif;color:rgba(255,255,255,.9)}
+.fhh-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.fhh-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:14px;font:600 15px/1.2 "Plus Jakarta Sans",system-ui,sans-serif;text-decoration:none;transition:all .3s ease}
+.fhh-btn svg{width:18px;height:18px;flex-shrink:0}
+.fhh-btn--gold{color:#023047;background:linear-gradient(135deg,#FFD76A,#FFB703 45%,#E09E00);box-shadow:0 10px 30px rgba(224,158,0,.35)}
+.fhh-btn--gold:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(224,158,0,.5)}
+.fhh-arr{transition:transform .3s ease}
+.fhh-btn--gold:hover .fhh-arr{transform:translateX(4px)}
+.fhh-btn--glass{color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.fhh-btn--glass svg{color:#25D366}
+.fhh-btn--glass:hover{background:rgba(255,255,255,.16);border-color:#FFB703;transform:translateY(-3px)}
+
+/* Search bar */
+.fhh-search{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:2;width:min(1080px,calc(100% - 32px));display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1.05fr auto;align-items:center;gap:6px;padding:12px 12px 12px 16px;text-align:left;color:#023047;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:20px;box-shadow:0 20px 50px rgba(2,48,71,.18)}
+.fhh-search::before{content:"";position:absolute;top:0;left:28px;right:28px;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,#FFD76A,#E09E00)}
+.fhh-field{position:relative;display:flex;align-items:center;gap:12px;min-width:0;padding:8px 12px;border-radius:14px;transition:all .3s ease}
+.fhh-field:hover,.fhh-field:focus-within{background:rgba(255,183,3,.1)}
+.fhh-field+.fhh-field::before{content:"";position:absolute;left:-3px;top:20%;bottom:20%;width:1px;background:rgba(2,48,71,.12)}
+.fhh-ico{width:40px;height:40px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;color:#C98A00;border:1px solid rgba(224,158,0,.45);transition:all .3s ease}
+.fhh-ico svg{width:18px;height:18px}
+.fhh-field:hover .fhh-ico,.fhh-field:focus-within .fhh-ico{color:#023047;background:linear-gradient(135deg,#FFD76A,#E09E00);border-color:transparent;transform:rotate(-8deg)}
+.fhh-f{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}
+.fhh-f label,.fhh-lbl{font:700 10.5px/1 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8A5E00}
+.fhh-f select,.fhh-f input{width:100%;padding:2px 20px 2px 0;border:0;outline:none;background:transparent;font:500 15px/1.3 "Plus Jakarta Sans",system-ui,sans-serif;color:#023047;cursor:pointer;-webkit-appearance:none;appearance:none;text-overflow:ellipsis}
+.fhh-f select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C98A00' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right center/14px no-repeat}
+.fhh-f input{padding-right:0}
+.fhh-guests{display:flex;align-items:center;gap:8px}
+.fhh-step{width:28px;height:28px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(224,158,0,.5);background:#fff;color:#023047;font:600 16px/1 system-ui,sans-serif;cursor:pointer;transition:all .3s ease}
+.fhh-step:hover{background:#FFB703;border-color:#FFB703;transform:scale(1.08)}
+.fhh-guests output{min-width:84px;text-align:center;font:500 15px/1.3 "Plus Jakarta Sans",system-ui,sans-serif;white-space:nowrap}
+.fhh-go{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:62px;padding:0 30px;border:0;border-radius:16px;cursor:pointer;font:700 13px/1 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#023047;background:linear-gradient(135deg,#FFD76A,#FFB703 45%,#E09E00);box-shadow:0 10px 30px rgba(224,158,0,.3);transition:all .3s ease}
+.fhh-go svg{width:17px;height:17px;transition:transform .3s ease}
+.fhh-go:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(224,158,0,.45)}
+.fhh-go:hover svg{transform:scale(1.15) rotate(-8deg)}
+
+@media (max-width:1020px){
+  .fhh{min-height:auto;padding:80px 20px 36px;margin-bottom:0;overflow:hidden}
+  .fhh-search{position:relative;left:auto;bottom:auto;transform:none;width:100%;max-width:640px;margin:40px auto 0;grid-template-columns:1fr 1fr;padding:14px}
+  .fhh-field+.fhh-field::before{display:none}
+  .fhh-go{grid-column:1/-1;height:54px}
+}
+@media (max-width:560px){
+  .fhh{padding-top:64px}
+  .fhh-cta{flex-direction:column;align-items:stretch}
+  .fhh-search{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.fhh-bg,.fhh-in{animation:none}}
