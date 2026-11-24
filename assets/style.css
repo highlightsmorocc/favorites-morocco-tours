@@ -603,3 +603,39 @@ header.fh.is-scrolled .fh-langbtn{background:rgba(255,255,255,.12);border-color:
 .card.fc:hover .more{background:#FFB703;color:#023047}
 .card.fc:hover .fc-go{background:#023047;color:#FFB703;transform:translateX(3px)}
 @media (max-width:600px){.card.fc h3{font-size:20px}.card.fc .body{padding:20px}}
+
+/* =========================================================
+   Footer (ff-) · navy like the header, amber accents
+   ========================================================= */
+footer.ff{position:relative;overflow:hidden;margin:0;padding:76px 24px 30px;border:0;background:#023047;color:rgba(255,255,255,.76);font:400 14.5px/1.7 "Plus Jakarta Sans",system-ui,sans-serif}
+footer.ff::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#FFB703,transparent)}
+footer.ff::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,183,3,.12),transparent 70%);pointer-events:none}
+.ff-in{position:relative;z-index:1;max-width:1180px;margin:0 auto}
+.ff-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1.1fr;gap:48px}
+.ff-logo{display:inline-block;margin-bottom:22px;transition:all .3s ease}
+.ff-logo:hover{transform:translateY(-3px)}
+.ff-logo img{display:block;height:84px;width:auto}
+.ff-about{margin:0 0 14px;color:rgba(255,255,255,.72)}
+.ff-about strong{color:#fff}
+.ff-label{margin:24px 0 12px;font:700 11.5px/1 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#FFB703}
+.ff-badges{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.ff-badges li{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;font:600 12.5px/1.2 "Plus Jakarta Sans",system-ui,sans-serif;transition:all .3s ease}
+.ff-badges li::before{content:"\2713";color:#FFB703;font-weight:800}
+.ff-badges li:hover{border-color:rgba(255,183,3,.5);background:rgba(255,183,3,.08)}
+.ff-h{margin:0 0 18px;font:600 15px/1.25 "Playfair Display",Georgia,serif;letter-spacing:.16em;text-transform:uppercase;color:#FFB703}
+.ff-h+ul+.ff-h{margin-top:36px}
+.ff-col ul{display:grid;gap:11px;list-style:none;margin:0;padding:0}
+.ff-col a{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.76);text-decoration:none;transition:all .3s ease}
+.ff-col a:hover{color:#FFD76A;transform:translateX(4px)}
+.ff-btns{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:26px}
+.ff-col a.ff-btn{gap:10px;padding:13px 24px;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:#fff;font:700 12.5px/1 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.ff-btn svg{width:16px;height:16px;flex-shrink:0}
+.ff-col a.ff-btn:hover{border-color:#FFB703;color:#FFB703;transform:translateY(-2px)}
+.ff-col a.ff-btn--gold{border:0;color:#023047;background:linear-gradient(135deg,#FFD76A,#FFB703 45%,#E09E00);box-shadow:0 10px 30px rgba(224,158,0,.3)}
+.ff-col a.ff-btn--gold:hover{color:#023047;box-shadow:0 14px 34px rgba(224,158,0,.45)}
+.ff-bottom{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:56px;padding-top:30px;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+.ff-bottom img{height:62px;width:auto;margin-bottom:6px}
+.ff-bottom p{margin:0;font-size:13px;color:rgba(255,255,255,.62)}
+.ff-bottom p strong{color:#fff;font-weight:600}
+@media (max-width:1020px){.ff-grid{grid-template-columns:1fr 1fr;gap:40px}}
+@media (max-width:600px){footer.ff{padding:58px 20px 26px}.ff-grid{grid-template-columns:1fr;gap:36px}}
