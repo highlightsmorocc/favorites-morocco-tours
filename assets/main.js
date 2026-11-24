@@ -127,3 +127,33 @@
     Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 })();
+
+/* Favorites Morocco Tours — hero search (fhh-) */
+(function () {
+  var f = document.querySelector('form[data-fhh]');
+  if (!f) return;
+  var out = f.querySelector('output'), n = 2;
+  function render() { out.textContent = n + ' ' + (n === 1 ? out.getAttribute('data-one') : out.getAttribute('data-many')); }
+  f.querySelectorAll('.fhh-step').forEach(function (b) {
+    b.addEventListener('click', function () { n = Math.min(60, Math.max(1, n + Number(b.getAttribute('data-step')))); render(); });
+  });
+  var d = f.querySelector('input[type="date"]');
+  if (d) d.min = new Date().toISOString().slice(0, 10);
+  function go(id) { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var c = document.getElementById('contact');
+    if (c) {
+      var cd = c.querySelector('input[type="date"]'); if (cd && d && d.value) cd.value = d.value;
+      var cn = c.querySelector('input[type="number"]'); if (cn) cn.value = n;
+    }
+    var dest = f.elements.dest.value, exp = f.elements.exp.value;
+    if (exp === 'daytrip') { go('day-trips'); return; }
+    var ok = { marrakech: 1, fes: 1, casablanca: 1, errachidia: 1 };
+    var key = ok[dest] ? dest : (exp === 'imperial' ? 'fes' : 'all');
+    var chip = document.querySelector('#tours [data-filter="' + key + '"]');
+    if (chip) chip.click();
+    go('tours');
+  });
+  render();
+})();
