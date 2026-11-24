@@ -61,3 +61,69 @@
 
   var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* Favorites Morocco Tours — premium header (fh-) */
+(function () {
+  var h = document.getElementById('fh');
+  if (!h) return;
+  var nav = document.getElementById('fh-nav');
+  var burger = h.querySelector('.fh-burger');
+  var overlay = h.querySelector('.fh-overlay');
+  var openLabel = burger.getAttribute('aria-label');
+  var closeLabel = burger.getAttribute('data-close') || openLabel;
+
+  function onScroll() { h.classList.toggle('is-scrolled', window.scrollY > 30); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  function setMenu(open) {
+    nav.classList.toggle('is-open', open);
+    overlay.classList.toggle('is-open', open);
+    document.body.classList.toggle('fh-lock', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? closeLabel : openLabel);
+  }
+  burger.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
+  overlay.addEventListener('click', function () { setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 1100) setMenu(false); });
+
+  h.querySelectorAll('.fh-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var li = btn.parentElement;
+      var open = !li.classList.contains('is-open');
+      li.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var f = a.getAttribute('data-filter');
+      if (f) {
+        var b = document.querySelector('#tours [data-filter="' + f + '"]');
+        if (b) b.click();
+      }
+      if ((a.getAttribute('href') || '').charAt(0) === '#') setMenu(false);
+    });
+  });
+
+  var links = Array.prototype.slice.call(h.querySelectorAll('.fh-menu > li > .fh-link[href^="#"]'));
+  if ('IntersectionObserver' in window && links.length) {
+    var map = {};
+    links.forEach(function (l) {
+      var id = l.getAttribute('href').slice(1);
+      if (document.getElementById(id)) map[id] = l;
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var l = map[en.target.id];
+        if (!l) return;
+        links.forEach(function (x) { x.classList.remove('is-active'); });
+        l.classList.add('is-active');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+  }
+})();
