@@ -185,6 +185,34 @@
   var me = document.currentScript && document.currentScript.src;
   var assets = me ? me.replace(/main.js.*$/, "") : "";
   /* Photos stored in this repository (assets/). Add more: "part-of-tour-url": "file.jpg" */
+  /* Fallbacks: by city + number of days, and day trips by place name (works in every language) */
+  var BYCAT = {
+      "marrakech-2": "cards/zagora-oasis.jpg",
+      "marrakech-3": "cards/camels-merzouga.jpg",
+      "marrakech-4": "cards/caravan-sunset.jpg",
+      "marrakech-5": "cards/merzouga-dunes.jpg",
+      "marrakech-6": "cards/caravan-shadows.jpg",
+      "marrakech-7": "cards/sahara-camp-night.jpg",
+      "marrakech fes-3": "cards/marrakech-jemaa-el-fna.jpg",
+      "marrakech fes-4": "cards/fes-tannery.jpg",
+      "marrakech fes-5": "cards/fes-medina.jpg",
+      "marrakech-12": "cards/chefchaouen.jpg",
+      "casablanca-6": "cards/casablanca-hassan-ii-mosque.jpg",
+      "casablanca-7": "cards/fes-medina.jpg",
+      "casablanca-8": "cards/chefchaouen.jpg",
+      "casablanca-10": "cards/rabat-kasbah-udayas.jpg",
+      "casablanca-15": "cards/essaouira.jpg",
+      "errachidia-3": "cards/errachidia-oasis.jpg",
+      "errachidia-4": "cards/caravan-shadows.jpg",
+      "tangier-15": "cards/tangier.jpg",
+      "tangier-12": "cards/tangier-harbor.jpg",
+      "tangier-10": "cards/chefchaouen-blue-alley.jpg",
+      "tangier-7": "cards/rabat-kasbah-udayas.jpg",
+      "tangier-6": "cards/chefchaouen.jpg",
+      "fes-6": "cards/chefchaouen-blue-alley.jpg",
+      "fes-5": "cards/merzouga-dunes.jpg"
+  };
+  var DAYIMG = [["Ait Ben Haddou","ait-ben-haddou-kasbah-morocco.jpg"],["Agafay","cards/agafay-desert.jpg"],["Ouzoud","cards/ouzoud-waterfalls.jpg"],["Ourika","cards/ourika-valley.jpg"],["Imlil","cards/imlil-atlas.jpg"],["Essaouira","cards/essaouira.jpg"],["Volubilis","cards/volubilis.jpg"]];
   var IMG = {
       "2-days-tour-from-marrakech-to-zagora": "cards/zagora-oasis.jpg",
       "3-days-tour-from-marrakech-to-desert": "cards/camels-merzouga.jpg",
@@ -243,9 +271,15 @@
     daysEl.innerHTML = "<b>" + n + "</b><small>" + word + "</small>";
     var chipEl = document.createElement("span"); chipEl.className = "fc-chip"; chipEl.textContent = chip; thumb.appendChild(chipEl);
     var slug = h.split("/").filter(Boolean).pop() || "";
-    if (IMG[slug] && assets) {
+    var ttl = (c.querySelector("h3") || {}).textContent || "";
+    var file = "";
+    if (day) {
+      DAYIMG.forEach(function (d) { if (!file && ttl.indexOf(d[0]) > -1) file = d[1]; });
+    }
+    if (!file) file = IMG[slug] || BYCAT[(c.getAttribute("data-cat") || "") + "-" + n] || "";
+    if (file && assets) {
       var im = document.createElement("img"); im.className = "fc-img"; im.loading = "lazy"; im.decoding = "async"; im.width = 900; im.height = 675;
-      im.src = assets + IMG[slug]; im.alt = (c.querySelector("h3") || {}).textContent || "";
+      im.src = assets + file; im.alt = ttl;
       thumb.insertBefore(im, thumb.firstChild.nextSibling); thumb.classList.add("fc-has-img");
     }
     var ul = document.createElement("ul"); ul.className = "fc-pts";
