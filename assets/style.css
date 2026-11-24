@@ -399,7 +399,7 @@ body.fh-lock{overflow:hidden}
 .fhh-btn--glass:hover{background:rgba(255,255,255,.16);border-color:#FFB703;transform:translateY(-3px)}
 
 /* Search bar */
-.fhh-search{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:2;width:min(1080px,calc(100% - 32px));display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1.05fr auto;align-items:center;gap:6px;padding:12px 12px 12px 16px;text-align:left;color:#023047;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:20px;box-shadow:0 20px 50px rgba(2,48,71,.18)}
+.fhh-search{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:2;width:min(1080px,calc(100% - 32px));display:grid;grid-template-columns:1.2fr 1.1fr .95fr 1.25fr auto;align-items:center;gap:4px;padding:12px 12px 12px 16px;text-align:left;color:#023047;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:20px;box-shadow:0 20px 50px rgba(2,48,71,.18)}
 .fhh-search::before{content:"";position:absolute;top:0;left:28px;right:28px;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,#FFD76A,#E09E00)}
 .fhh-field{position:relative;display:flex;align-items:center;gap:12px;min-width:0;padding:8px 12px;border-radius:14px;transition:all .3s ease}
 .fhh-field:hover,.fhh-field:focus-within{background:rgba(255,183,3,.1)}
@@ -412,11 +412,11 @@ body.fh-lock{overflow:hidden}
 .fhh-f select,.fhh-f input{width:100%;padding:2px 20px 2px 0;border:0;outline:none;background:transparent;font:500 15px/1.3 "Plus Jakarta Sans",system-ui,sans-serif;color:#023047;cursor:pointer;-webkit-appearance:none;appearance:none;text-overflow:ellipsis}
 .fhh-f select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C98A00' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right center/14px no-repeat}
 .fhh-f input{padding-right:0}
-.fhh-guests{display:flex;align-items:center;gap:8px}
+.fhh-guests{display:flex;align-items:center;gap:6px}
 .fhh-step{width:28px;height:28px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(224,158,0,.5);background:#fff;color:#023047;font:600 16px/1 system-ui,sans-serif;cursor:pointer;transition:all .3s ease}
 .fhh-step:hover{background:#FFB703;border-color:#FFB703;transform:scale(1.08)}
-.fhh-guests output{min-width:84px;text-align:center;font:500 15px/1.3 "Plus Jakarta Sans",system-ui,sans-serif;white-space:nowrap}
-.fhh-go{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:62px;padding:0 30px;border:0;border-radius:16px;cursor:pointer;font:700 13px/1 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#023047;background:linear-gradient(135deg,#FFD76A,#FFB703 45%,#E09E00);box-shadow:0 10px 30px rgba(224,158,0,.3);transition:all .3s ease}
+.fhh-guests output{min-width:70px;text-align:center;font:500 15px/1.3 "Plus Jakarta Sans",system-ui,sans-serif;white-space:nowrap}
+.fhh-go{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:62px;padding:0 26px;margin-left:6px;border:0;border-radius:16px;cursor:pointer;font:700 13px/1 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#023047;background:linear-gradient(135deg,#FFD76A,#FFB703 45%,#E09E00);box-shadow:0 10px 30px rgba(224,158,0,.3);transition:all .3s ease}
 .fhh-go svg{width:17px;height:17px;transition:transform .3s ease}
 .fhh-go:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(224,158,0,.45)}
 .fhh-go:hover svg{transform:scale(1.15) rotate(-8deg)}
