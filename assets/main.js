@@ -157,3 +157,17 @@
   });
   render();
 })();
+
+/* Favorites Morocco Tours - language dropdown */
+(function () {
+  var dd = document.querySelector(".fh-langdd");
+  if (!dd) return;
+  var btn = dd.querySelector(".fh-langbtn");
+  function set(open) {
+    dd.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  btn.addEventListener("click", function (e) { e.stopPropagation(); set(!dd.classList.contains("is-open")); });
+  document.addEventListener("click", function (e) { if (!dd.contains(e.target)) set(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+})();
