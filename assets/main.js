@@ -197,7 +197,7 @@
     var word = daysEl.textContent.replace(/[0-9]+/, "").trim();
     var day = !!c.closest("#day-trips") || n === 1 || /day-trip|quad-bike|essaouira-on/.test(h);
     var round = /fes-to-fes/.test(h);
-    var endFes = !round && /-to-fes/?$|marrakech-to-fes/.test(h);
+    var endFes = !round && (/marrakech-to-fes/.test(h) || /-to-fes.?$/.test(h));
     var endMar = /-to-marrakech/.test(h);
     var pts, chip = endFes ? t[16] : endMar ? t[17] : round ? t[18] : t[19];
     if (day) { pts = [t[12], t[13], t[14]]; chip = t[15]; }
