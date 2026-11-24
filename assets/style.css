@@ -611,7 +611,7 @@ footer.ff{position:relative;overflow:hidden;margin:0;padding:76px 24px 30px;bord
 footer.ff::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#FFB703,transparent)}
 footer.ff::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,183,3,.12),transparent 70%);pointer-events:none}
 .ff-in{position:relative;z-index:1;max-width:1180px;margin:0 auto}
-.ff-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1.1fr;gap:48px}
+.ff-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.25fr;gap:44px}
 .ff-logo{display:inline-block;margin-bottom:22px;transition:all .3s ease}
 .ff-logo:hover{transform:translateY(-3px)}
 .ff-logo img{display:block;height:84px;width:auto}
@@ -639,3 +639,5 @@ footer.ff::after{content:"";position:absolute;right:-140px;top:-140px;width:420p
 .ff-bottom p strong{color:#fff;font-weight:600}
 @media (max-width:1020px){.ff-grid{grid-template-columns:1fr 1fr;gap:40px}}
 @media (max-width:600px){footer.ff{padding:58px 20px 26px}.ff-grid{grid-template-columns:1fr;gap:36px}}
+.ff-col ul svg{width:16px;height:16px;flex-shrink:0;margin-top:3px;color:#FFB703}
+.ff-contact ul a{align-items:flex-start;overflow-wrap:anywhere}
