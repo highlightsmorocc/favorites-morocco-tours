@@ -171,3 +171,52 @@
   document.addEventListener("click", function (e) { if (!dd.contains(e.target)) set(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
 })();
+
+/* Favorites Morocco Tours - tour & day-trip cards (fc-) */
+(function () {
+  var T = {
+    en: ["Night in a Merzouga desert camp","Camel ride in the Erg Chebbi dunes","One-way trip ending in Fes","One-way trip ending in Marrakech","Round trip back to Fes","Private 4x4 with your driver","A night in the Sahara desert","Private driver for the whole trip","Flexible, tailor-made itinerary","Night in a Zagora desert camp","Camel ride at sunset","Ait Ben Haddou & the Draa Valley","Hotel or riad pick-up","Private driver","Back the same evening","Day trip","Ends in Fes","Ends in Marrakech","Round trip","Private tour","View tour","View day trip"],
+    es: ["Noche en un campamento en Merzouga","Paseo en camello por las dunas de Erg Chebbi","Ruta de ida que termina en Fez","Ruta de ida que termina en Marrakech","Ida y vuelta a Fez","4x4 privado con tu conductor","Una noche en el desierto del Sáhara","Conductor privado todo el viaje","Itinerario flexible y a medida","Noche en un campamento en Zagora","Paseo en camello al atardecer","Ait Ben Haddou y el valle del Draa","Recogida en tu hotel o riad","Conductor privado","Vuelta el mismo día","Excursión de un día","Termina en Fez","Termina en Marrakech","Ida y vuelta","Tour privado","Ver tour","Ver excursión"],
+    pt: ["Noite em acampamento em Merzouga","Passeio de camelo nas dunas de Erg Chebbi","Roteiro só de ida terminando em Fez","Roteiro só de ida terminando em Marrakech","Ida e volta a Fez","4x4 privado com seu motorista","Uma noite no deserto do Saara","Motorista particular a viagem toda","Roteiro flexível e sob medida","Noite em acampamento em Zagora","Passeio de camelo ao pôr do sol","Ait Ben Haddou e o Vale do Draa","Busca no hotel ou riad","Motorista particular","Volta no mesmo dia","Passeio de um dia","Termina em Fez","Termina em Marrakech","Ida e volta","Tour privado","Ver tour","Ver passeio"],
+    it: ["Notte in un campo tendato a Merzouga","Escursione in cammello sulle dune di Erg Chebbi","Viaggio di sola andata fino a Fes","Viaggio di sola andata fino a Marrakech","Andata e ritorno a Fes","4x4 privato con il tuo autista","Una notte nel deserto del Sahara","Autista privato per tutto il viaggio","Itinerario flessibile e su misura","Notte in un campo tendato a Zagora","Escursione in cammello al tramonto","Ait Ben Haddou e la Valle del Draa","Partenza dal tuo hotel o riad","Autista privato","Rientro in giornata","Escursione","Fine a Fes","Fine a Marrakech","Andata e ritorno","Tour privato","Vedi tour","Vedi escursione"]
+  };
+  var lang = (document.documentElement.lang || "en").slice(0, 2);
+  var t = T[lang] || T.en;
+  var me = document.currentScript && document.currentScript.src;
+  var assets = me ? me.replace(/main.js.*$/, "") : "";
+  /* Photos stored in this repository (assets/). Add more: "part-of-tour-url": "file.jpg" */
+  var IMG = { "ait-ben-haddou-day-trip": "ait-ben-haddou-kasbah-morocco.jpg" };
+  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  document.querySelectorAll("a.card").forEach(function (c) {
+    if (c.classList.contains("fc")) return;
+    var h = c.getAttribute("href") || "";
+    var routeEl = c.querySelector(".route"), daysEl = c.querySelector(".days"), thumb = c.querySelector(".thumb"), more = c.querySelector(".more");
+    if (!thumb || !daysEl || !more) return;
+    var route = routeEl ? routeEl.textContent : "";
+    var n = parseInt(daysEl.textContent, 10) || 1;
+    var word = daysEl.textContent.replace(/[0-9]+/, "").trim();
+    var day = !!c.closest("#day-trips") || n === 1 || /day-trip|quad-bike|essaouira-on/.test(h);
+    var round = /fes-to-fes/.test(h);
+    var endFes = !round && /-to-fes/?$|marrakech-to-fes/.test(h);
+    var endMar = /-to-marrakech/.test(h);
+    var pts, chip = endFes ? t[16] : endMar ? t[17] : round ? t[18] : t[19];
+    if (day) { pts = [t[12], t[13], t[14]]; chip = t[15]; }
+    else if (/zagora/.test(h)) { pts = [t[9], t[10], t[11]]; }
+    else if (/Merzouga|Erg Chebbi/.test(route) && n < 7) { pts = [t[0], t[1], endFes ? t[2] : endMar ? t[3] : round ? t[4] : t[5]]; }
+    else { pts = [t[6], t[7], t[8]]; }
+    daysEl.innerHTML = "<b>" + n + "</b><small>" + word + "</small>";
+    var chipEl = document.createElement("span"); chipEl.className = "fc-chip"; chipEl.textContent = chip; thumb.appendChild(chipEl);
+    Object.keys(IMG).forEach(function (k) {
+      if (h.indexOf(k) > -1 && assets) {
+        var im = document.createElement("img"); im.className = "fc-img"; im.loading = "lazy"; im.decoding = "async";
+        im.src = assets + IMG[k]; im.alt = (c.querySelector("h3") || {}).textContent || "";
+        thumb.insertBefore(im, thumb.firstChild.nextSibling); thumb.classList.add("fc-has-img");
+      }
+    });
+    var ul = document.createElement("ul"); ul.className = "fc-pts";
+    pts.forEach(function (p) { var li = document.createElement("li"); li.textContent = p; ul.appendChild(li); });
+    if (routeEl) routeEl.after(ul); else more.before(ul);
+    more.innerHTML = (day ? t[21] : t[20]) + '<span class="fc-go">' + ARROW + "</span>";
+    c.classList.add("fc");
+  });
+})();
