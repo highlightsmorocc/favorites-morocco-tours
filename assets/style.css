@@ -777,3 +777,117 @@ footer.ff::after{content:"";position:absolute;right:-140px;top:-140px;width:420p
 .tp-day-body p{padding:0;color:var(--txt)}
 .tp-faq details[open] summary::after{transform:translateY(-50%)}
 .tp-faq summary{display:block}
+
+/* =========================================================
+   GOLD THEME — yellow-dominant look (Atlas-style)
+   Overrides only; remove this block to go back to navy/amber.
+   ========================================================= */
+:root{
+  --sun:#FFC107; --sun-2:#FFD54F; --sun-3:#FFB300; --sun-deep:#E69500;
+  --cream:#FFF8E1; --cream-2:#FFF1C2;
+  --navy:#0B2A3A;
+  --line:rgba(230,149,0,.30);
+  --sand:var(--cream);
+  --shadow:0 10px 30px rgba(120,80,0,.10);
+}
+body{background:#FFFDF6}
+
+/* Top bar → bright yellow */
+.topbar,.fh-top{background:linear-gradient(90deg,var(--sun-2),var(--sun) 50%,var(--sun-3));color:var(--navy)}
+.tb-links a:hover,.fh-contact a:hover{color:#fff}
+.tb-ic{background:rgba(11,42,58,.12);color:var(--navy)}
+.tb-links a:hover .tb-ic{background:var(--navy);color:var(--sun)}
+.fh-contact svg{color:var(--navy)}
+.fh-sep{background:rgba(11,42,58,.3)}
+.lang,.fh-lang{background:rgba(255,255,255,.45);border-color:rgba(11,42,58,.15)}
+.lang a,.fh-lang a{color:var(--navy)}
+.lang a.on,.fh-lang a[aria-current]{background:var(--navy);color:var(--sun)}
+.lang a:hover,.fh-lang a:not([aria-current]):hover{background:rgba(255,255,255,.7)}
+.fh-social a{color:var(--navy);border-color:rgba(11,42,58,.3)}
+.fh-social a:hover{background:var(--navy);border-color:var(--navy);color:var(--sun)}
+
+/* Header */
+header.site::before,header.fh::before{border-bottom:3px solid var(--sun)}
+.menu a,.fh-link{color:var(--navy)}
+.menu a::after{background:var(--sun)}
+.fh-link::after{background:linear-gradient(90deg,var(--sun-2),var(--sun-deep))}
+
+/* Buttons: solid sunny yellow */
+.btn-gold,.btn-book,.fhh-btn--gold,.fh-cta{background:linear-gradient(135deg,var(--sun-2),var(--sun) 55%,var(--sun-3));color:var(--navy)}
+.btn-book{background:linear-gradient(var(--sun),var(--sun)) padding-box,linear-gradient(135deg,var(--sun-2),var(--sun-deep)) border-box}
+.fh-arrow{background:var(--navy);color:var(--sun)}
+
+/* Section titles with yellow accent bar */
+.eyebrow{color:var(--sun-deep)}
+h2::after{content:"";display:block;width:64px;height:5px;border-radius:5px;margin-top:.7rem;background:linear-gradient(90deg,var(--sun),var(--sun-deep))}
+.center h2::after{margin-inline:auto}
+.hero h2::after,.offer h2::after{display:none}
+
+/* Soft cream sections */
+.why,.faq{background:var(--cream)}
+.feat .ico,.cline .ico{background:linear-gradient(135deg,var(--sun-2),var(--sun));color:var(--navy)}
+.feat:hover,.term:hover{border-color:var(--sun)}
+.term{background:var(--cream);border-color:var(--line)}
+.term b{color:var(--sun-deep)}
+
+/* Cards */
+.card{border:1px solid rgba(230,149,0,.15);border-top:4px solid var(--sun)}
+.card:hover{box-shadow:0 20px 50px rgba(230,149,0,.28)}
+.card .days{background:var(--sun);color:var(--navy)}
+.card .more{color:var(--navy)}
+.card:hover .more{color:var(--sun-deep)}
+.chip{border-color:rgba(230,149,0,.35);background:#fff}
+.chip:hover{background:var(--cream-2);border-color:var(--sun)}
+.chip.on{background:var(--sun);color:var(--navy);border-color:var(--sun)}
+
+/* Group-offer band → yellow */
+.offer{background:linear-gradient(135deg,var(--sun-2),var(--sun) 55%,var(--sun-3));color:var(--navy)}
+.offer h2,.offer p{color:var(--navy)!important}
+.big{background:linear-gradient(135deg,var(--navy),#1b4a63);-webkit-background-clip:text;background-clip:text}
+.calc .out span:last-child{color:var(--navy)}
+.calc input[type=range]{accent-color:var(--navy)}
+
+/* Strip + feature bars */
+.strip{background:var(--navy);border-color:var(--sun)}
+.strip svg{color:var(--sun)}
+
+/* FAQ */
+summary::after{color:var(--sun-deep)}
+details[open]{border-color:var(--sun)}
+
+/* Footer: dark navy with a yellow top edge */
+footer{background:var(--navy);border-top:6px solid var(--sun)}
+footer h4{color:var(--sun)}
+footer a:hover{color:var(--sun-2)}
+footer .legal{border-top-color:rgba(255,193,7,.25)}
+
+/* Hero accents */
+.hero .eyebrow,.fhh-eyebrow{color:var(--sun)}
+.fhh h1 em,.hero h1 em{color:var(--sun-2)}
+.fhh-eyebrow::before,.fhh-eyebrow::after{background:linear-gradient(90deg,transparent,var(--sun))}
+
+/* Gold theme — tour cards (yellow body, navy text) */
+.card.fc{background:var(--sun);border:0;border-top:5px solid var(--sun-deep);color:var(--navy)}
+.card.fc:hover{box-shadow:0 22px 50px rgba(230,149,0,.38)}
+.card.fc .body{background:linear-gradient(180deg,#FFE082,var(--sun) 100%)}
+.card.fc h3{color:var(--navy)}
+.card.fc .route{color:#6B4500;border-bottom-color:rgba(11,42,58,.18)}
+.card.fc .more{border-color:var(--navy);color:var(--navy)}
+.card.fc:hover .more{background:var(--navy);color:var(--sun)}
+.card.fc:hover .fc-go{background:var(--sun);color:var(--navy)}
+.card.fc .fc-go{background:var(--navy);color:var(--sun)}
+.card.fc .days b{color:var(--sun-2)}
+
+/* Gold theme — group-offer band readability */
+.offer .eyebrow{color:var(--navy)}
+.offer .glass{background:var(--navy);border-color:rgba(255,255,255,.15);color:#fff}
+.offer .glass .out span:last-child{color:var(--sun)}
+.offer .glass input[type=range]{accent-color:var(--sun)}
+.offer .glass .btn-gold{color:var(--navy)}
+
+/* Gold theme — fixes for light-on-yellow text */
+.fc-pts li{color:var(--navy)}
+.fc-pts li::before{background:var(--navy);color:var(--sun)}
+.offer .eyebrow{color:var(--navy)!important}
+.card.fc .days{background:rgba(11,42,58,.88);border-color:rgba(255,193,7,.45);color:#fff}
+.card.fc .days b{color:var(--sun)}
