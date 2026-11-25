@@ -866,18 +866,6 @@ footer .legal{border-top-color:rgba(255,193,7,.25)}
 .fhh h1 em,.hero h1 em{color:var(--sun-2)}
 .fhh-eyebrow::before,.fhh-eyebrow::after{background:linear-gradient(90deg,transparent,var(--sun))}
 
-/* Gold theme — tour cards (yellow body, navy text) */
-.card.fc{background:var(--sun);border:0;border-top:5px solid var(--sun-deep);color:var(--navy)}
-.card.fc:hover{box-shadow:0 22px 50px rgba(230,149,0,.38)}
-.card.fc .body{background:linear-gradient(180deg,#FFE082,var(--sun) 100%)}
-.card.fc h3{color:var(--navy)}
-.card.fc .route{color:#6B4500;border-bottom-color:rgba(11,42,58,.18)}
-.card.fc .more{border-color:var(--navy);color:var(--navy)}
-.card.fc:hover .more{background:var(--navy);color:var(--sun)}
-.card.fc:hover .fc-go{background:var(--sun);color:var(--navy)}
-.card.fc .fc-go{background:var(--navy);color:var(--sun)}
-.card.fc .days b{color:var(--sun-2)}
-
 /* Gold theme — group-offer band readability */
 .offer .eyebrow{color:var(--navy)}
 .offer .glass{background:var(--navy);border-color:rgba(255,255,255,.15);color:#fff}
@@ -886,8 +874,4 @@ footer .legal{border-top-color:rgba(255,193,7,.25)}
 .offer .glass .btn-gold{color:var(--navy)}
 
 /* Gold theme — fixes for light-on-yellow text */
-.fc-pts li{color:var(--navy)}
-.fc-pts li::before{background:var(--navy);color:var(--sun)}
 .offer .eyebrow{color:var(--navy)!important}
-.card.fc .days{background:rgba(11,42,58,.88);border-color:rgba(255,193,7,.45);color:#fff}
-.card.fc .days b{color:var(--sun)}
