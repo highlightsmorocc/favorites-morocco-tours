@@ -682,10 +682,9 @@ footer.ff::after{content:"";position:absolute;right:-140px;top:-140px;width:420p
 @media(min-width:960px){.fw-media{min-height:600px}.fw-img1{width:78%;height:76%}.fw-img2{width:56%;height:52%}}
 
 
-/* About / Welcome: text left, photos right (team photo + camels) */
+/* About / Welcome: text left, team photo alone on the right */
 .fw-text{order:1}
-.fw-media{order:2}
-.fw-img1{left:auto;right:0}
-.fw-img2{right:auto;left:0}
+.fw-media{order:2;min-height:0}
+.fw-img1{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;height:auto;aspect-ratio:1/1}
+.fw-img1 img{object-position:50% center}
 .fw-badge{left:auto;right:5%}
-.fw-img1 img{object-position:55% center}
