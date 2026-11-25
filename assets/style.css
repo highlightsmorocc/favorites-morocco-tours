@@ -967,3 +967,18 @@ footer h4{color:var(--amber)}
 .tp-price{color:var(--amber)}
 .tp-num{background:#023047;color:var(--amber)}
 .tp-yes h3, .tp-box h3{font-family:Oswald,sans-serif!important}
+
+
+            /* Top bar navy #023047 */
+.topbar,.fh-top{background:#023047;color:rgba(255,255,255,.92)}
+.fh-top a,.tb-links a,.fh-contact a{color:rgba(255,255,255,.92)}
+.tb-links a:hover,.fh-contact a:hover{color:var(--sun)}
+.tb-ic{background:rgba(255,255,255,.12);color:var(--sun)}
+.tb-links a:hover .tb-ic{background:var(--sun);color:#023047}
+.fh-contact svg{color:var(--sun)}
+.fh-sep{background:rgba(255,255,255,.25)}
+.fh-social a{color:#fff;border-color:rgba(255,255,255,.3)}
+.fh-social a:hover{background:var(--sun);border-color:var(--sun);color:#023047}
+.lang,.fh-lang{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+.lang a,.fh-lang a{color:#fff}
+.lang a.on,.fh-lang a[aria-current]{background:var(--sun);color:#023047}
