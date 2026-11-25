@@ -680,3 +680,12 @@ footer.ff::after{content:"";position:absolute;right:-140px;top:-140px;width:420p
 .fw-btn--ghost:hover{background:#023047;color:#fff;transform:translateY(-2px)}
 @media(max-width:600px){.fw{padding:64px 18px}.fw-media{min-height:330px}.fw-badge{padding:10px 14px}.fw-badge b{font-size:24px}}
 @media(min-width:960px){.fw-media{min-height:600px}.fw-img1{width:78%;height:76%}.fw-img2{width:56%;height:52%}}
+
+
+/* About / Welcome: text left, photos right (team photo + camels) */
+.fw-text{order:1}
+.fw-media{order:2}
+.fw-img1{left:auto;right:0}
+.fw-img2{right:auto;left:0}
+.fw-badge{left:auto;right:5%}
+.fw-img1 img{object-position:55% center}
