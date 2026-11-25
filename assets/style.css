@@ -771,3 +771,9 @@ footer.ff::after{content:"";position:absolute;right:-140px;top:-140px;width:420p
 .tp-cta p{margin:0 auto 22px;max-width:620px;color:rgba(255,255,255,.82);line-height:1.7}
 .tp-cta .tp-btn{display:inline-flex;width:auto;margin:6px}
 @media(max-width:600px){.tp-day-body{padding:0 18px 20px}.tp-days::before{display:none}.tp-day summary{grid-template-columns:52px 1fr 22px;padding-right:14px}}
+
+.tp-main>section{padding:0}
+.tp-day summary::after{content:none}
+.tp-day-body p{padding:0;color:var(--txt)}
+.tp-faq details[open] summary::after{transform:translateY(-50%)}
+.tp-faq summary{display:block}
