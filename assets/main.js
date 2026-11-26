@@ -377,7 +377,7 @@
   }
   document.addEventListener("click", function (e) {
     var a = e.target.closest(".fh-cta, [data-book]");
-    if (a) { e.preventDefault(); open(a.getAttribute("data-book")); return; }
+    if (a) { e.preventDefault(); open(a.getAttribute("data-book")); var px = a.getAttribute("data-pax"); if (px) form.adults.value = px; return; }
     if (e.target.closest("[data-close]")) close();
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !bk.hidden) close(); });
@@ -435,4 +435,28 @@
         });
     });
   });
+})();
+
+/* Favorites Morocco Tours - group offer counter (go-) */
+(function () {
+  var card = document.querySelector("[data-go]");
+  if (!card) return;
+  var r = card.querySelector("#go-range"), out = card.querySelector("#go-out b"), msg = card.querySelector(".go-msg"), btn = card.querySelector(".go-btn");
+  function upd() {
+    var v = parseInt(r.value, 10), min = parseInt(r.min, 10), max = parseInt(r.max, 10);
+    out.textContent = v;
+    r.style.setProperty("--p", ((v - min) / (max - min) * 100) + "%");
+    var on = v >= 16;
+    card.classList.toggle("is-on", on);
+    msg.textContent = on ? card.getAttribute("data-ok") : card.getAttribute("data-more").replace("{n}", 16 - v);
+    btn.setAttribute("data-pax", v);
+  }
+  r.addEventListener("input", upd);
+  card.querySelectorAll(".go-pm").forEach(function (b) {
+    b.addEventListener("click", function () {
+      r.value = Math.max(parseInt(r.min, 10), Math.min(parseInt(r.max, 10), parseInt(r.value, 10) + parseInt(b.getAttribute("data-d"), 10)));
+      upd();
+    });
+  });
+  upd();
 })();

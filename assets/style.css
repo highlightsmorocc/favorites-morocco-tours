@@ -1148,3 +1148,57 @@ html.bk-lock{overflow:hidden}
 .pf-done p{margin:0;max-width:420px;color:var(--fh-muted);line-height:1.6}
 .offer .pf-done h3,.contact .pf-done h3{color:inherit}
 .form .pf-done p{color:rgba(255,255,255,.8)}.form .pf-done h3{color:#fff}
+
+/* ===== Group offer (go-) — navy + amber ===== */
+.go{position:relative;overflow:hidden;padding:100px 20px;color:#fff;font-family:var(--fh-font);background:radial-gradient(900px 480px at 12% 20%,rgba(255,183,3,.16),transparent 60%),radial-gradient(700px 420px at 95% 90%,rgba(255,183,3,.10),transparent 60%),linear-gradient(135deg,#034263 0%,#023047 55%,#011d2d 100%)}
+.go::before{content:"";position:absolute;inset:0;background:url("cards/sahara-camp-night.jpg") right center/cover no-repeat;opacity:.10;mix-blend-mode:luminosity;pointer-events:none}
+.go::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:linear-gradient(90deg,#000,transparent 60%);mask-image:linear-gradient(90deg,#000,transparent 60%);pointer-events:none}
+.go-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.go-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(255,183,3,.12);border:1px solid rgba(255,183,3,.35);color:var(--fh-amber-l);font:700 12px/1 var(--fh-font);letter-spacing:.16em;text-transform:uppercase}
+.go-eyebrow svg{width:16px;height:16px}
+.go-badge{display:flex;align-items:center;gap:16px;margin:26px 0 8px}
+.go-badge b{font:800 clamp(4.2rem,9vw,7rem)/.9 var(--fh-font);letter-spacing:-.04em;background:linear-gradient(135deg,#FFE29A,var(--fh-amber) 45%,var(--fh-amber-d));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 10px 30px rgba(255,183,3,.25))}
+.go-badge span{display:flex;flex-direction:column;gap:4px;padding-left:16px;border-left:2px solid rgba(255,183,3,.45);color:rgba(255,255,255,.8);font:500 .95rem/1.2 var(--fh-font)}
+.go-badge strong{font:800 1.4rem/1 var(--fh-font);color:#fff;text-transform:uppercase;letter-spacing:.06em}
+.go h2{margin:14px 0 14px;color:#fff!important;font-family:"Playfair Display",Georgia,serif!important;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.15;text-transform:none}
+.go h2 em{font-style:italic;color:var(--fh-amber)!important}
+.go h2::after{display:none}
+.go-lead{margin:0 0 24px;max-width:520px;color:rgba(255,255,255,.8)!important;font-size:1.05rem;line-height:1.7}
+.go-perks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.go-perks li{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);font-size:.88rem;font-weight:600;color:#fff}
+.go-perks span{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:rgba(255,183,3,.2);color:var(--fh-amber)}
+.go-perks svg{width:12px;height:12px}
+.go-card{position:relative;padding:32px 30px 26px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.go-card::before{content:"";position:absolute;top:0;left:28px;right:28px;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,var(--fh-amber-l),var(--fh-amber-d))}
+.go-q{display:block;text-align:center;font:700 .82rem/1 var(--fh-font);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.go-count{display:flex;align-items:center;justify-content:center;gap:22px;margin:18px 0 6px}
+.go-pm{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,183,3,.55);background:rgba(255,255,255,.06);color:#fff;font:600 1.5rem/1 var(--fh-font);cursor:pointer;transition:all .3s ease}
+.go-pm:hover{background:linear-gradient(135deg,var(--fh-amber-l),var(--fh-amber-d));border-color:transparent;color:var(--fh-navy);transform:scale(1.08)}
+.go-count output{display:flex;flex-direction:column;align-items:center;min-width:110px}
+.go-count output b{font:800 3.6rem/1 var(--fh-font);color:#fff;letter-spacing:-.02em;transition:transform .2s ease}
+.go-count output small{margin-top:4px;font-size:.85rem;color:rgba(255,255,255,.65)}
+.go-slider{position:relative;margin:22px 4px 42px}
+.go-slider input{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:999px;outline:none;cursor:pointer;background:linear-gradient(90deg,var(--fh-amber-l),var(--fh-amber-d)) 0/var(--p,36.8%) 100% no-repeat,rgba(255,255,255,.14)}
+.go-slider input::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:6px solid var(--fh-amber);box-shadow:0 4px 14px rgba(0,0,0,.35),0 0 0 6px rgba(255,183,3,.18);transition:transform .2s ease}
+.go-slider input::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:6px solid var(--fh-amber);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.go-slider input:active::-webkit-slider-thumb{transform:scale(1.15)}
+.go-goal{position:absolute;top:18px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;font:700 .72rem/1 var(--fh-font);letter-spacing:.06em;color:var(--fh-amber-l);white-space:nowrap;pointer-events:none}
+.go-goal i{width:2px;height:10px;background:var(--fh-amber);border-radius:2px}
+.go-status{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:all .3s ease}
+.go-dot{flex-shrink:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);color:rgba(255,255,255,.5);transition:all .3s ease}
+.go-dot svg{width:15px;height:15px}
+.go-msg{flex:1;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.85);line-height:1.35}
+.go-disc{display:flex;flex-direction:column;align-items:flex-end}
+.go-disc small{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.go-disc b{font:800 1.6rem/1 var(--fh-font);color:rgba(255,255,255,.35);transition:all .3s ease}
+.go-card.is-on .go-status{background:rgba(255,183,3,.12);border-color:rgba(255,183,3,.45)}
+.go-card.is-on .go-dot{background:linear-gradient(135deg,var(--fh-amber-l),var(--fh-amber-d));color:var(--fh-navy);box-shadow:0 0 0 6px rgba(255,183,3,.18)}
+.go-card.is-on .go-disc b{color:var(--fh-amber)}
+.go-btn{margin-top:18px;display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 22px;border-radius:999px;text-decoration:none;color:var(--fh-navy);font:800 .95rem/1 var(--fh-font);letter-spacing:.05em;text-transform:uppercase;background:linear-gradient(135deg,var(--fh-amber-l),var(--fh-amber) 45%,var(--fh-amber-d));box-shadow:0 14px 30px rgba(224,158,0,.35);transition:all .3s ease}
+.go-btn svg{width:18px;height:18px;transition:transform .3s ease}
+.go-btn:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(224,158,0,.45)}
+.go-btn:hover svg{transform:translateX(4px)}
+.go-fine{margin:14px 0 0;text-align:center;font-size:.78rem;color:rgba(255,255,255,.6)!important}
+@media(max-width:900px){.go{padding:76px 18px}.go-in{grid-template-columns:1fr;gap:36px}.go-copy{text-align:center}.go-lead{margin-left:auto;margin-right:auto}.go-badge,.go-perks{justify-content:center}}
+@media(max-width:420px){.go-card{padding:28px 18px 22px}.go-badge{flex-direction:column;gap:10px}.go-badge span{border-left:0;padding-left:0;align-items:center}}
+/* ===== /go ===== */
