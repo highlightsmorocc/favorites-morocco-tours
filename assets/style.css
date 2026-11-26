@@ -1002,3 +1002,26 @@ footer h4{color:var(--amber)}
 .bl-grid .bl-read::after{content:"\2192";width:38px;height:38px;border-radius:50%;background:#023047;color:#FFB703;display:grid;place-items:center;font-size:18px;letter-spacing:0}
 .bl-grid .bl-read:hover{color:#023047;transform:translateY(-2px);box-shadow:0 14px 30px rgba(251,133,0,.45)}
 .bl-grid .bl-read:hover::after{transform:translateX(4px)}
+
+/* ===== Language menu — same look & behaviour as the Tours submenu (v fh7) ===== */
+.fh-langmenu{min-width:280px;padding:10px;border-radius:16px;background:rgba(255,255,255,.97);box-shadow:0 20px 50px rgba(2,48,71,.16);transform:translateY(10px)}
+.fh-langmenu::before{left:24px;right:24px}
+.fh-langmenu::after{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+.fh-langmenu li+li{margin-top:2px}
+.fh-langmenu a{gap:12px;padding:10px 12px;border-radius:12px;color:var(--fh-ink);font:inherit;line-height:1.25}
+.fh-langmenu a:hover,.fh-langmenu a:focus-visible{background:rgba(255,183,3,.14)}
+.fh-langmenu .fh-flag{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(2,48,71,.06);transition:all .3s ease}
+.fh-langmenu .fh-flag svg{width:22px;height:15px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08);transform:none}
+.fh-langmenu a:hover svg{transform:none}
+.fh-langmenu a:hover .fh-flag{background:linear-gradient(135deg,var(--fh-amber-l),var(--fh-amber-d));transform:rotate(-6deg) scale(1.06)}
+.fh-langmenu a strong{display:block;font:600 14px/1.25 var(--fh-font);color:var(--fh-navy)}
+.fh-langmenu a small,.fh-langmenu a[aria-current] small{display:block;margin:2px 0 0;font:400 12px/1.35 var(--fh-font);letter-spacing:0;color:var(--fh-muted)}
+.fh-langmenu a[aria-current]{background:linear-gradient(135deg,rgba(255,215,106,.32),rgba(224,158,0,.12));position:relative}
+.fh-langmenu a[aria-current]::after{content:"";margin-left:auto;width:18px;height:18px;flex-shrink:0;border-radius:50%;background:var(--fh-amber-d) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23023047' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+.fh-langmenu a[aria-current] .fh-flag{background:#fff}
+@media (hover:hover) and (min-width:901px){
+  .fh-langdd:hover .fh-langmenu,.fh-langdd:focus-within .fh-langmenu{opacity:1;visibility:visible;transform:none}
+  .fh-langdd:hover .fh-langbtn{border-color:var(--fh-amber);box-shadow:0 6px 18px rgba(224,158,0,.22);transform:translateY(-1px)}
+  .fh-langdd:hover .fh-lchev{transform:rotate(180deg)}
+}
+@media (max-width:480px){.fh-langmenu{min-width:250px;right:-6px}}
