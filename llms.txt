@@ -1,0 +1,28 @@
+# Favorites Morocco Tours
+
+> Favorites Morocco Tours (Favorites Morocco Tours LLC) is a Morocco travel agency based in Marrakech that organizes private tours with a private driver and local guides: Sahara desert tours (Merzouga, Erg Chebbi, Zagora), multi-day itineraries from Marrakech, Casablanca, Fes, Tangier and Errachidia, and day trips (Atlas Mountains, Ourika, Imlil, Ouzoud, Essaouira, Ait Ben Haddou, Agafay, Volubilis). The website is available in English, Spanish, Portuguese and Italian.
+
+Booking: 20% deposit to confirm, the rest paid in Morocco. Free cancellation up to 14 days before departure.
+Contact: favoritesmoroccotours@gmail.com · WhatsApp +212 786 278 943 · Phone +1 614 858 5453
+
+## Main pages
+- [Home](https://favoritesmoroccotours.com/): private Morocco tours and desert trips
+- [All Morocco tours](https://favoritesmoroccotours.com/morocco-tours/)
+- [Tours from Marrakech](https://favoritesmoroccotours.com/tours-from-marrakech/)
+- [Tours from Casablanca](https://favoritesmoroccotours.com/tours-from-casablanca/)
+- [Tours from Fes](https://favoritesmoroccotours.com/tours-from-fes/)
+- [Tours from Tangier](https://favoritesmoroccotours.com/tours-from-tangier/)
+- [Tours from Errachidia](https://favoritesmoroccotours.com/tours-from-errachidia/)
+- [Day trips from Marrakech](https://favoritesmoroccotours.com/day-trips-from-marrakech/)
+- [Day trips from Fes](https://favoritesmoroccotours.com/day-trips-from-fes/)
+- [About us](https://favoritesmoroccotours.com/about-us/)
+- [Contact](https://favoritesmoroccotours.com/contact/)
+- [Travel blog](https://favoritesmoroccotours.com/blog/)
+
+## Other languages
+- [Español](https://favoritesmoroccotours.com/es/): tours privados por Marruecos
+- [Português](https://favoritesmoroccotours.com/pt/): tours privados por Marrocos
+- [Italiano](https://favoritesmoroccotours.com/it/): tour privati in Marocco
+
+## Sitemap
+- [sitemap.xml](https://favoritesmoroccotours.com/sitemap.xml)
