@@ -289,3 +289,124 @@
     c.classList.add("fc");
   });
 })();
+
+/* Favorites Morocco Tours - "Book your tour" email form (bk-) */
+(function () {
+  var MAIL = "favoritesmoroccotours@gmail.com";
+  var lang = (document.documentElement.lang || "en").slice(0, 2);
+  var S = {
+    en: { kicker: "Private tour request", title: "Book your Morocco tour", sub: "Tell us your plans and we reply by email within 24 hours with a tailor-made itinerary and price.",
+      name: "Full name", email: "Email", phone: "WhatsApp / phone", tour: "What would you like to book?", date: "Arrival date", adults: "Adults", kids: "Children", msg: "Your message",
+      msgPh: "Cities you want to see, hotel style, special requests...", send: "Send my request", sending: "Sending...", close: "Close",
+      tours: ["Sahara desert tour from Marrakech", "Tour from Fes", "Tour from Casablanca", "Tour from Tangier", "Tour from Errachidia", "Day trip", "Merzouga luxury camp packages", "Tailor-made trip"],
+      ok: "Thank you! Your request has been sent.", ok2: "We will reply by email within 24 hours. For a faster answer, write to us on WhatsApp.",
+      fail: "The form could not be sent. Your email app will open with your request ready to send.",
+      trust: ["Reply within 24 h", "20% deposit, rest paid in Morocco", "Free cancellation up to 14 days"], or: "Prefer WhatsApp?", subject: "New tour request" },
+    es: { kicker: "Solicitud de viaje privado", title: "Reserva tu viaje a Marruecos", sub: "Cuéntanos tus planes y te respondemos por email en menos de 24 horas con un itinerario a medida y el precio.",
+      name: "Nombre completo", email: "Email", phone: "WhatsApp / teléfono", tour: "¿Qué quieres reservar?", date: "Fecha de llegada", adults: "Adultos", kids: "Niños", msg: "Tu mensaje",
+      msgPh: "Ciudades que quieres ver, tipo de alojamiento, peticiones especiales...", send: "Enviar mi solicitud", sending: "Enviando...", close: "Cerrar",
+      tours: ["Tour por el desierto desde Marrakech", "Tour desde Fez", "Tour desde Casablanca", "Tour desde Tánger", "Tour desde Errachidia", "Excursión de un día", "Paquetes campamento de lujo Merzouga", "Viaje a medida"],
+      ok: "¡Gracias! Tu solicitud se ha enviado.", ok2: "Te responderemos por email en menos de 24 horas. Para una respuesta más rápida, escríbenos por WhatsApp.",
+      fail: "No se pudo enviar el formulario. Se abrirá tu aplicación de correo con la solicitud lista para enviar.",
+      trust: ["Respuesta en 24 h", "20% de depósito, resto en Marruecos", "Cancelación gratis hasta 14 días"], or: "¿Prefieres WhatsApp?", subject: "Nueva solicitud de viaje" },
+    pt: { kicker: "Pedido de viagem privada", title: "Reserve sua viagem ao Marrocos", sub: "Conte seus planos e respondemos por e-mail em até 24 horas com um roteiro sob medida e o preço.",
+      name: "Nome completo", email: "E-mail", phone: "WhatsApp / telefone", tour: "O que você quer reservar?", date: "Data de chegada", adults: "Adultos", kids: "Crianças", msg: "Sua mensagem",
+      msgPh: "Cidades que quer conhecer, tipo de hospedagem, pedidos especiais...", send: "Enviar meu pedido", sending: "Enviando...", close: "Fechar",
+      tours: ["Tour pelo deserto saindo de Marrakech", "Tour saindo de Fez", "Tour saindo de Casablanca", "Tour saindo de Tânger", "Tour saindo de Errachidia", "Passeio de um dia", "Pacotes acampamento de luxo Merzouga", "Viagem sob medida"],
+      ok: "Obrigado! Seu pedido foi enviado.", ok2: "Responderemos por e-mail em até 24 horas. Para uma resposta mais rápida, fale conosco pelo WhatsApp.",
+      fail: "Não foi possível enviar o formulário. Seu aplicativo de e-mail vai abrir com o pedido pronto para enviar.",
+      trust: ["Resposta em 24 h", "Sinal de 20%, restante no Marrocos", "Cancelamento grátis até 14 dias"], or: "Prefere WhatsApp?", subject: "Novo pedido de viagem" },
+    it: { kicker: "Richiesta di viaggio privato", title: "Prenota il tuo viaggio in Marocco", sub: "Raccontaci i tuoi piani: ti rispondiamo via email entro 24 ore con un itinerario su misura e il prezzo.",
+      name: "Nome e cognome", email: "Email", phone: "WhatsApp / telefono", tour: "Cosa vuoi prenotare?", date: "Data di arrivo", adults: "Adulti", kids: "Bambini", msg: "Il tuo messaggio",
+      msgPh: "Città che vuoi vedere, tipo di alloggio, richieste speciali...", send: "Invia la richiesta", sending: "Invio in corso...", close: "Chiudi",
+      tours: ["Tour nel deserto da Marrakech", "Tour da Fes", "Tour da Casablanca", "Tour da Tangeri", "Tour da Errachidia", "Escursione di un giorno", "Pacchetti campo di lusso Merzouga", "Viaggio su misura"],
+      ok: "Grazie! La tua richiesta è stata inviata.", ok2: "Ti risponderemo via email entro 24 ore. Per una risposta più rapida, scrivici su WhatsApp.",
+      fail: "Non è stato possibile inviare il modulo. Si aprirà la tua app di posta con la richiesta pronta da inviare.",
+      trust: ["Risposta entro 24 h", "Acconto del 20%, saldo in Marocco", "Cancellazione gratuita fino a 14 giorni"], or: "Preferisci WhatsApp?", subject: "Nuova richiesta di viaggio" }
+  };
+  var t = S[lang] || S.en;
+  var me = document.querySelector('script[src*="assets/main.js"]');
+  var root = me ? me.getAttribute("src").replace(/assets\/main\.js.*$/, "") : "";
+  var today = new Date().toISOString().slice(0, 10);
+  function esc(s) { return String(s).replace(/[<>"]/g, ""); }
+  var ico = {
+    close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.2 4.2L19 7"/></svg>',
+    send: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>',
+    wa: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>'
+  };
+  var opts = t.tours.map(function (o) { return "<option>" + o + "</option>"; }).join("");
+  var counter = function (n, label, v, min) {
+    return '<div class="bk-field"><label>' + label + '</label><div class="bk-step"><button type="button" data-step="-1" aria-label="-">−</button><input name="' + n + '" type="number" min="' + min + '" max="40" value="' + v + '" inputmode="numeric"><button type="button" data-step="1" aria-label="+">+</button></div></div>';
+  };
+  var html =
+    '<div class="bk" id="bk" role="dialog" aria-modal="true" aria-labelledby="bk-title" hidden><div class="bk-backdrop" data-close></div>' +
+    '<div class="bk-box"><button class="bk-x" type="button" data-close aria-label="' + t.close + '">' + ico.close + '</button>' +
+    '<aside class="bk-side" style="background-image:linear-gradient(180deg,rgba(2,48,71,.35),rgba(2,48,71,.92)),url(' + root + 'assets/cards/merzouga-dunes.jpg)">' +
+    '<img class="bk-logo" src="' + root + 'assets/logo-favorites.png" alt="Favorites Morocco Tours" height="64">' +
+    '<div><span class="bk-kicker">' + t.kicker + '</span><ul class="bk-trust">' + t.trust.map(function (x) { return "<li><span>" + ico.check + "</span>" + x + "</li>"; }).join("") + '</ul>' +
+    '<a class="bk-wa" href="https://wa.me/212786278943" target="_blank" rel="noopener">' + ico.wa + '<span><small>' + t.or + '</small>+212 786 278 943</span></a></div></aside>' +
+    '<div class="bk-main"><div class="bk-form-wrap"><span class="bk-kicker bk-kicker--m">' + t.kicker + '</span><h2 id="bk-title">' + t.title + '</h2><p class="bk-sub">' + t.sub + '</p>' +
+    '<form class="bk-form" novalidate>' +
+    '<input type="text" name="_honey" class="bk-hp" tabindex="-1" autocomplete="off">' +
+    '<div class="bk-grid">' +
+    '<div class="bk-field"><label for="bk-name">' + t.name + ' *</label><input id="bk-name" name="name" required autocomplete="name"></div>' +
+    '<div class="bk-field"><label for="bk-email">' + t.email + ' *</label><input id="bk-email" name="email" type="email" required autocomplete="email"></div>' +
+    '<div class="bk-field"><label for="bk-phone">' + t.phone + '</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel"></div>' +
+    '<div class="bk-field"><label for="bk-date">' + t.date + '</label><input id="bk-date" name="arrival" type="date" min="' + today + '"></div>' +
+    '<div class="bk-field bk-full"><label for="bk-tour">' + t.tour + '</label><select id="bk-tour" name="tour">' + opts + '</select></div>' +
+    counter("adults", t.adults, 2, 1) + counter("children", t.kids, 0, 0) +
+    '<div class="bk-field bk-full"><label for="bk-msg">' + t.msg + '</label><textarea id="bk-msg" name="message" rows="3" placeholder="' + t.msgPh + '"></textarea></div>' +
+    '</div><button class="bk-send" type="submit"><span>' + t.send + '</span>' + ico.send + '</button><p class="bk-err" role="alert" hidden></p></form></div>' +
+    '<div class="bk-done" hidden><div class="bk-done-ico">' + ico.check + '</div><h3>' + t.ok + '</h3><p>' + t.ok2 + '</p><a class="bk-wa bk-wa--light" href="https://wa.me/212786278943" target="_blank" rel="noopener">' + ico.wa + '<span>WhatsApp +212 786 278 943</span></a></div>' +
+    '</div></div></div>';
+  document.body.insertAdjacentHTML("beforeend", html);
+  var bk = document.getElementById("bk"), form = bk.querySelector(".bk-form"), last = null;
+  function open(preset) {
+    last = document.activeElement;
+    bk.querySelector(".bk-form-wrap").hidden = false; bk.querySelector(".bk-done").hidden = true;
+    if (preset) { var sel = form.tour; for (var i = 0; i < sel.options.length; i++) if (sel.options[i].text.toLowerCase().indexOf(preset.toLowerCase()) > -1) sel.selectedIndex = i; }
+    var navOpen = document.querySelector(".fh-burger[aria-expanded=true]"); if (navOpen) navOpen.click();
+    bk.hidden = false; document.documentElement.classList.add("bk-lock");
+    requestAnimationFrame(function () { bk.classList.add("is-open"); });
+    setTimeout(function () { form.name.focus(); }, 250);
+  }
+  function close() {
+    bk.classList.remove("is-open"); document.documentElement.classList.remove("bk-lock");
+    setTimeout(function () { bk.hidden = true; if (last) last.focus(); }, 300);
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest(".fh-cta, [data-book]");
+    if (a) { e.preventDefault(); open(a.getAttribute("data-book")); return; }
+    if (e.target.closest("[data-close]")) close();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !bk.hidden) close(); });
+  bk.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-step]"); if (!b) return;
+    var inp = b.parentNode.querySelector("input"), v = (parseInt(inp.value, 10) || 0) + parseInt(b.getAttribute("data-step"), 10);
+    inp.value = Math.max(parseInt(inp.min, 10), Math.min(40, v));
+  });
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var err = form.querySelector(".bk-err"); err.hidden = true;
+    form.querySelectorAll("[required]").forEach(function (f) { f.classList.toggle("bk-bad", !f.checkValidity()); });
+    if (!form.checkValidity()) { var bad = form.querySelector(".bk-bad"); if (bad) bad.focus(); return; }
+    if (form._honey.value) return;
+    var btn = form.querySelector(".bk-send"), lbl = btn.querySelector("span");
+    btn.disabled = true; lbl.textContent = t.sending;
+    var data = {};
+    new FormData(form).forEach(function (v, k) { if (k !== "_honey") data[k] = esc(v); });
+    data._subject = t.subject + " – " + data.tour + " – " + data.name;
+    data._replyto = data.email; data._template = "table"; data._captcha = "false";
+    data.page = location.href; data.language = lang.toUpperCase();
+    fetch("https://formsubmit.co/ajax/" + MAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error("fail"); }); })
+      .then(function () { bk.querySelector(".bk-form-wrap").hidden = true; bk.querySelector(".bk-done").hidden = false; form.reset(); })
+      .catch(function () {
+        err.textContent = t.fail; err.hidden = false;
+        var body = ["name", "email", "phone", "arrival", "tour", "adults", "children", "message"].map(function (k) { return k + ": " + (data[k] || ""); }).join("\n");
+        setTimeout(function () { location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(data._subject) + "&body=" + encodeURIComponent(body); }, 900);
+      })
+      .then(function () { btn.disabled = false; lbl.textContent = t.send; });
+  });
+})();
