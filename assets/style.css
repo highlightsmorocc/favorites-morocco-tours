@@ -1223,3 +1223,133 @@ html.bk-lock{overflow:hidden}
 .tp-card ul.ar-rel li::before,.tp-card ul.ar-rel li::after{display:none!important;content:none!important}
 .tp-card ul.ar-rel a{width:100%;box-sizing:border-box}
 /* ===== /ar ===== */
+
+/* ===== Dark theme (dt-) ===== */
+html[data-theme="dark"]{--paper:#0b1822;--sand:#0f202d;--card:#132634;--txt:#dfe8ee;--muted:#9fb2bf;--fh-ink:#dfe8ee;--fh-muted:#9fb2bf;--fh-line:rgba(255,255,255,.10);color-scheme:dark}
+html[data-theme="dark"] body{background:#0b1822;color:#dfe8ee}
+html[data-theme="dark"] .ar-toc,
+html[data-theme="dark"] .bk-box,
+html[data-theme="dark"] .bk-field input,
+html[data-theme="dark"] .bk-field input:focus,
+html[data-theme="dark"] .bk-field select,
+html[data-theme="dark"] .bk-field select:focus,
+html[data-theme="dark"] .bk-field textarea,
+html[data-theme="dark"] .bk-field textarea:focus,
+html[data-theme="dark"] .bk-step,
+html[data-theme="dark"] .bk-x,
+html[data-theme="dark"] .burger,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .cline,
+html[data-theme="dark"] .contact,
+html[data-theme="dark"] .dp-cities a,
+html[data-theme="dark"] .dp-facts dl,
+html[data-theme="dark"] .dp-hl article,
+html[data-theme="dark"] .dp-q,
+html[data-theme="dark"] .faq,
+html[data-theme="dark"] .feat,
+html[data-theme="dark"] .fh-burger,
+html[data-theme="dark"] .fh-langmenu,
+html[data-theme="dark"] .fh-nav,
+html[data-theme="dark"] .fh-sub,
+html[data-theme="dark"] .fw-feats li,
+html[data-theme="dark"] .term,
+html[data-theme="dark"] .tp-box,
+html[data-theme="dark"] .tp-day,
+html[data-theme="dark"] .tp-faq details,
+html[data-theme="dark"] .tp-faq summary::after,
+html[data-theme="dark"] .tp-meta li,
+html[data-theme="dark"] .tp-route li span,
+html[data-theme="dark"] .why,
+html[data-theme="dark"] body,
+html[data-theme="dark"] details,
+html[data-theme="dark"] header.fh.is-scrolled .fh-burger[aria-expanded="true"],
+html[data-theme="dark"] header.fh::before,
+html[data-theme="dark"] header.site::before{background:#132634!important;border-color:rgba(255,255,255,.08)!important}
+html[data-theme="dark"] .ar-body #faq,
+html[data-theme="dark"] .ar-sec h2,
+html[data-theme="dark"] .ar-sec p,
+html[data-theme="dark"] .ar-toc a,
+html[data-theme="dark"] .bk-done h3,
+html[data-theme="dark"] .bk-field input,
+html[data-theme="dark"] .bk-field label,
+html[data-theme="dark"] .bk-field select,
+html[data-theme="dark"] .bk-field textarea,
+html[data-theme="dark"] .bk-main h2,
+html[data-theme="dark"] .bk-step button,
+html[data-theme="dark"] .bk-x,
+html[data-theme="dark"] .bl-grid .bl-read,
+html[data-theme="dark"] .card h3,
+html[data-theme="dark"] .dp-cities a,
+html[data-theme="dark"] .dp-facts dd,
+html[data-theme="dark"] .dp-group-head h2,
+html[data-theme="dark"] .dp-h2,
+html[data-theme="dark"] .dp-hl h3,
+html[data-theme="dark"] .dp-q summary,
+html[data-theme="dark"] .dp-q[open] summary::after,
+html[data-theme="dark"] .dp-sec>h2,
+html[data-theme="dark"] .feat h3,
+html[data-theme="dark"] .fh-drawer-foot .fh-wa,
+html[data-theme="dark"] .fh-langmenu a,
+html[data-theme="dark"] .fh-langmenu a strong,
+html[data-theme="dark"] .fh-link,
+html[data-theme="dark"] .fh-sub a,
+html[data-theme="dark"] .fh-sub strong,
+html[data-theme="dark"] .form input,
+html[data-theme="dark"] .form select,
+html[data-theme="dark"] .form textarea,
+html[data-theme="dark"] .fw-feats strong,
+html[data-theme="dark"] .fw-text h2,
+html[data-theme="dark"] .fw-text p a,
+html[data-theme="dark"] .menu a,
+html[data-theme="dark"] .pf-done h3,
+html[data-theme="dark"] .term b,
+html[data-theme="dark"] .tp-box h3,
+html[data-theme="dark"] .tp-box li,
+html[data-theme="dark"] .tp-day h3,
+html[data-theme="dark"] .tp-day-body p,
+html[data-theme="dark"] .tp-faq details[open] summary::after,
+html[data-theme="dark"] .tp-faq p,
+html[data-theme="dark"] .tp-faq summary,
+html[data-theme="dark"] .tp-main h2,
+html[data-theme="dark"] .tp-quick p,
+html[data-theme="dark"] .tp-route li,
+html[data-theme="dark"] body,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] summary{color:#e8eef2!important}
+html[data-theme="dark"] .form input,html[data-theme="dark"] .form select,html[data-theme="dark"] .form textarea,html[data-theme="dark"] .ct-form input,html[data-theme="dark"] .ct-form select,html[data-theme="dark"] .ct-form textarea{background:#0f202d!important;border-color:rgba(255,255,255,.14)!important;color:#e8eef2!important}
+html[data-theme="dark"] .bl-card,html[data-theme="dark"] .ct-form,html[data-theme="dark"] .ct-card,html[data-theme="dark"] .tp-quick{background:#132634!important;border-color:rgba(255,255,255,.08)!important}
+html[data-theme="dark"] .bl-card h3 a,html[data-theme="dark"] .ct-form h2,html[data-theme="dark"] .ct-form label{color:#e8eef2!important}
+html[data-theme="dark"] .bl-card p,html[data-theme="dark"] .card .route,html[data-theme="dark"] .tp-lead,html[data-theme="dark"] .dp-sub,html[data-theme="dark"] p{color:#b9c8d3}
+html[data-theme="dark"] .tp-main h2 em,html[data-theme="dark"] .dp-h2 em{color:var(--fh-amber)!important}
+html[data-theme="dark"] header.fh.is-scrolled::before{background:rgba(11,24,34,.85)!important}
+html[data-theme="dark"] .fh-langbtn{background:#132634;color:#e8eef2;border-color:rgba(255,255,255,.14)}
+html[data-theme="dark"] .fh-sub a:hover,html[data-theme="dark"] .fh-langmenu a:hover{background:rgba(255,183,3,.12)}
+html[data-theme="dark"] .fh-ico,html[data-theme="dark"] .fh-langmenu .fh-flag{background:rgba(255,255,255,.08);color:#e8eef2}
+html[data-theme="dark"] .fh-brand img{filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+html[data-theme="dark"] section,html[data-theme="dark"] main{border-color:rgba(255,255,255,.06)}
+html[data-theme="dark"] .fw,html[data-theme="dark"] .why,html[data-theme="dark"] .faq,html[data-theme="dark"] .contact,html[data-theme="dark"] .dp-band{background:#0b1822!important}
+html[data-theme="dark"] .fw-feats li,html[data-theme="dark"] .fhh-search,html[data-theme="dark"] .fhh-step,html[data-theme="dark"] .chip,html[data-theme="dark"] .fh-toggle,html[data-theme="dark"] .mz-card,html[data-theme="dark"] .bk-wa--light,html[data-theme="dark"] .bk-err{background:#132634!important;border-color:rgba(255,255,255,.1)!important;color:#e8eef2}
+html[data-theme="dark"] .tp-quick{background:linear-gradient(135deg,#132634,#0f202d)!important}
+html[data-theme="dark"] .mz-card--hot{background:linear-gradient(#132634,#132634) padding-box,linear-gradient(135deg,var(--fh-amber-l),var(--fh-amber-d)) border-box!important;border:2px solid transparent!important}
+html[data-theme="dark"] .mz-btn--ghost{background:linear-gradient(#132634,#132634) padding-box,linear-gradient(135deg,var(--fh-amber-l),var(--fh-amber-d)) border-box!important;color:#e8eef2!important}
+html[data-theme="dark"] .mz-head h3,html[data-theme="dark"] .fhh-field b,html[data-theme="dark"] .fhh-field strong,html[data-theme="dark"] .fhh-search select,html[data-theme="dark"] .fhh-search input,html[data-theme="dark"] .fw-text h2 span,html[data-theme="dark"] .fw h2,html[data-theme="dark"] .chip{color:#e8eef2!important}
+html[data-theme="dark"] .fhh-search select,html[data-theme="dark"] .fhh-search input{background:transparent!important}
+html[data-theme="dark"] .mz-ico,html[data-theme="dark"] .fw-feats li i{background:rgba(255,255,255,.08)}
+html[data-theme="dark"] .mz-head{border-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .fw-btn--ghost{color:#e8eef2;border-color:rgba(255,183,3,.7)}
+html[data-theme="dark"] .fw-btn--ghost:hover{background:var(--fh-amber);color:#023047}
+html[data-theme="dark"] .mz-ico,html[data-theme="dark"] .fw-feats li i,html[data-theme="dark"] .feat .ico{color:var(--fh-amber)}
+html[data-theme="dark"] .tp-meta li,html[data-theme="dark"] .tp-route li span{color:#dfe8ee!important}
+/* day / night switch in the top bar */
+.dt-switch{position:relative;width:58px;height:30px;margin-left:10px;padding:0;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);cursor:pointer;transition:all .3s ease;flex-shrink:0}
+.dt-switch:hover{border-color:var(--fh-amber);box-shadow:0 0 0 4px rgba(255,183,3,.15)}
+.dt-knob{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--fh-navy);box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .35s cubic-bezier(.2,.8,.2,1.2),background .3s ease}
+.dt-knob svg{width:15px;height:15px;transition:transform .5s ease}
+.dt-switch .dt-moon{display:none}
+html[data-theme="dark"] .dt-switch{background:rgba(255,183,3,.18);border-color:rgba(255,183,3,.55)}
+html[data-theme="dark"] .dt-knob{transform:translateX(28px);background:linear-gradient(135deg,var(--fh-amber-l),var(--fh-amber-d))}
+html[data-theme="dark"] .dt-switch .dt-sun{display:none}
+html[data-theme="dark"] .dt-switch .dt-moon{display:block}
+.dt-switch:active .dt-knob svg{transform:rotate(90deg)}
+.fh-right{display:flex;align-items:center}
+/* ===== /dt ===== */
