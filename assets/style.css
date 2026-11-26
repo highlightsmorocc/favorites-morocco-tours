@@ -1142,3 +1142,9 @@ html.bk-lock{overflow:hidden}
 }
 @media (max-width:440px){.bk-grid{grid-template-columns:1fr}}
 /* ===== /bk ===== */
+/* page forms -> email: success state */
+.pf-done{display:flex;flex-direction:column;align-items:center;text-align:center;padding:34px 18px}
+.pf-done h3{margin:20px 0 8px;font-family:"Playfair Display",Georgia,serif;font-size:1.5rem;color:var(--fh-navy)}
+.pf-done p{margin:0;max-width:420px;color:var(--fh-muted);line-height:1.6}
+.offer .pf-done h3,.contact .pf-done h3{color:inherit}
+.form .pf-done p{color:rgba(255,255,255,.8)}.form .pf-done h3{color:#fff}

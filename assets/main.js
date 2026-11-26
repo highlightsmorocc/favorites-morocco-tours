@@ -409,4 +409,30 @@
       })
       .then(function () { btn.disabled = false; lbl.textContent = t.send; });
   });
+
+  /* Page forms (home + contact) -> email */
+  document.querySelectorAll("form[data-mail]").forEach(function (pf) {
+    pf.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (pf._honey && pf._honey.value) return;
+      if (!pf.checkValidity()) { pf.reportValidity(); return; }
+      var btn = pf.querySelector("button[type=submit]"), old = btn.innerHTML;
+      btn.disabled = true; btn.textContent = t.sending;
+      var d = {};
+      new FormData(pf).forEach(function (v, k) { if (k !== "_honey" && v) d[k] = esc(v); });
+      var who = d.Name || d.Nombre || d.Nome || "";
+      d._subject = t.subject + " – " + who; d._replyto = d.Email || ""; d._template = "table"; d._captcha = "false";
+      d.page = location.href; d.language = lang.toUpperCase();
+      fetch("https://formsubmit.co/ajax/" + MAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(d) })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error("fail"); }); })
+        .then(function () {
+          pf.innerHTML = '<div class="pf-done"><div class="bk-done-ico">' + ico.check + '</div><h3>' + t.ok + '</h3><p>' + t.ok2 + '</p></div>';
+        })
+        .catch(function () {
+          btn.disabled = false; btn.innerHTML = old;
+          var body = Object.keys(d).filter(function (k) { return k.charAt(0) !== "_"; }).map(function (k) { return k + ": " + d[k]; }).join("\n");
+          location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(d._subject) + "&body=" + encodeURIComponent(body);
+        });
+    });
+  });
 })();
