@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page moved | Favorites Morocco Tours</title>
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--navy2:#132d52;--amber:#e3a341;--amber2:#c4821c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',Inter,system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;color:#fff;background:radial-gradient(900px 500px at 85% -10%,rgba(227,163,65,.22),transparent 60%),linear-gradient(160deg,var(--navy),var(--navy2))}
+.card{width:100%;max-width:560px;text-align:center;padding:44px 32px;border-radius:20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.brand{font-family:'Playfair Display',serif;color:var(--amber);letter-spacing:.05em;font-size:1.05rem;margin-bottom:22px}
+.spin{width:40px;height:40px;margin:0 auto 22px;border-radius:50%;border:3px solid rgba(255,255,255,.18);border-top-color:var(--amber);animation:r 1s linear infinite}
+@keyframes r{to{transform:rotate(360deg)}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4.5vw,2.2rem);line-height:1.2;margin-bottom:12px}
+p{color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:all .3s ease}
+.btn-p{background:linear-gradient(135deg,var(--amber),var(--amber2));color:var(--navy)}
+.btn-s{color:#fff;border:1px solid rgba(227,163,65,.65)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="brand">Favorites Morocco Tours</div>
+  <div class="spin" id="spin"></div>
+  <h1 id="t">Taking you to the right page…</h1>
+  <p id="d">This page has moved to a new address. You will be redirected in a moment.</p>
+  <div class="btns">
+    <a class="btn btn-p" id="home" href="/">Home</a>
+    <a class="btn btn-s" id="tours" href="/morocco-tours/">Morocco tours</a>
+  </div>
+</main>
+<script>
+(function () {
+  var TXT = {
+    en: {t: "Taking you to the right page…", d: "This page has moved to a new address. You will be redirected in a moment.", h: "Home", o: "Morocco tours", nt: "Page not found", nd: "We could not find this page. Explore our private Morocco tours or go back to the home page."},
+    es: {t: "Te llevamos a la página correcta…", d: "Esta página tiene una nueva dirección. Te redirigimos en un momento.", h: "Inicio", o: "Tours por Marruecos", nt: "Página no encontrada", nd: "No encontramos esta página. Descubre nuestros tours privados por Marruecos o vuelve al inicio."},
+    pt: {t: "Levando você para a página certa…", d: "Esta página mudou de endereço. Você será redirecionado em instantes.", h: "Início", o: "Tours por Marrocos", nt: "Página não encontrada", nd: "Não encontramos esta página. Conheça nossos tours privados por Marrocos ou volte ao início."},
+    it: {t: "Ti portiamo alla pagina giusta…", d: "Questa pagina ha un nuovo indirizzo. Verrai reindirizzato tra un momento.", h: "Home", o: "Tour in Marocco", nt: "Pagina non trovata", nd: "Non abbiamo trovato questa pagina. Scopri i nostri tour privati in Marocco o torna alla home."}
+  };
+
+  var path = decodeURIComponent(location.pathname).toLowerCase();
+  if (path.slice(-1) !== "/" && path.indexOf(".") === -1) { path = path + "/"; }
+
+  /* 1. Old GitHub project path: /favorites-morocco-tours/xxx/ -> /xxx/ */
+  if (path.indexOf("/favorites-morocco-tours/") === 0 && path !== "/favorites-morocco-tours/") {
+    location.replace(path.replace("/favorites-morocco-tours", "") + location.search + location.hash);
+    return;
+  }
+
+  var seg = path.split("/").filter(Boolean);
+  var lang = (seg[0] === "es" || seg[0] === "pt" || seg[0] === "it") ? seg[0] : "en";
+  var pre = lang === "en" ? "" : "/" + lang;
+  var T = TXT[lang];
+  document.documentElement.lang = lang;
+  document.getElementById("t").textContent = T.t;
+  document.getElementById("d").textContent = T.d;
+  document.getElementById("home").textContent = T.h;
+  document.getElementById("home").href = pre + "/";
+  document.getElementById("tours").textContent = T.o;
+  if (lang === "es") { document.getElementById("tours").href = "/es/tours-por-marruecos/"; }
+
+  /* 2. Known old WordPress URLs */
+  var MAP = {
+    "/favorites-morocco-tours/": "/about-us/",
+    "/contact-us/": "/contact/",
+    "/blog-en/": "/blog/",
+    "/destination/blog-en/": "/blog/",
+    "/destination/morocco-tours/": "/morocco-tours/",
+    "/destination/day-trips/": "/day-trips-from-marrakech/",
+    "/destination/day-trips-morocco/": "/day-trips-from-marrakech/",
+    "/destination/from-fes/": "/day-trips-from-fes/",
+    "/destination/tours-from-errachidia/": "/tours-from-errachidia/",
+    "/es/tours-a-marruecos/": "/es/tours-por-marruecos/",
+    "/es/destination/blog/": "/es/blog/",
+    "/es/destination/excursiones-desde-marrakech/": "/es/excursiones-desde-marrakech/",
+    "/es/destination/desde-fes/": "/es/excursiones-desde-fez/",
+    "/es/destination/rutas-desde-marrakech/": "/es/tours-desde-marrakech/"
+  };
+  if (MAP[path] && MAP[path] !== path) { location.replace(MAP[path]); return; }
+
+  /* 3. Best match from the live sitemap */
+  var STOP = ["tour","tours","day","days","dia","dias","giorni","de","del","da","do","di","desde","from","to","the","al","a","en","in","and","y","e","por","through","private","privado","trip","destination","guide","guia","complete","completa","morocco","marruecos","marrocos","marocco","es","pt","it","www"];
+  function words(p) {
+    return p.replace(/^\/(es|pt|it)(?=\/)/, "").replace(/\/destination\//, "/").replace(/-\d\/$/, "/")
+      .replace(/fez/g, "fes").split(/[^a-z0-9]+/).filter(function (w) { return w.length > 1 && STOP.indexOf(w) === -1 && !/^\d+$/.test(w); });
+  }
+  function nums(p) { return (p.replace(/-\d\/$/, "/").match(/\d+/g) || []).filter(function (n) { return n.length < 3; }); }
+
+  function notFound() {
+    document.getElementById("spin").style.display = "none";
+    document.getElementById("t").textContent = T.nt;
+    document.getElementById("d").textContent = T.nd;
+  }
+
+  fetch("/sitemap.xml").then(function (r) { return r.text(); }).then(function (xml) {
+    var locs = (xml.match(/<loc>[^<]+<\/loc>/g) || []).map(function (l) {
+      return l.replace(/<\/?loc>/g, "").replace(/^https?:\/\/[^\/]+/, "");
+    });
+    var same = locs.filter(function (l) {
+      var s = l.split("/").filter(Boolean)[0] || "";
+      var lg = (s === "es" || s === "pt" || s === "it") ? s : "en";
+      return lg === lang;
+    });
+    var toursLink = same.filter(function (l) { return /tour/.test(l) && !/\d/.test(l) && l.split("/").filter(Boolean).length <= 2; })[0];
+    if (toursLink && (lang === "pt" || lang === "it")) { document.getElementById("tours").href = toursLink; }
+
+    var w = words(path), n = nums(path), best = null, bestScore = 0;
+    if (!w.length) { notFound(); return; }
+    same.forEach(function (l) {
+      var lw = words(l), ln = nums(l), s = 0, hit = 0;
+      w.forEach(function (x) { if (lw.indexOf(x) > -1) { s += 2; hit++; } });
+      if (!hit) { return; }
+      if (n.length) {
+        if (n.some(function (x) { return ln.indexOf(x) > -1; })) { s += 3; } else { s -= 3; }
+      }
+      s -= Math.max(0, lw.length - w.length) * 0.25;
+      if (s > bestScore) { bestScore = s; best = l; }
+    });
+    var need = w.length === 1 ? 2 : 3;
+    if (best && bestScore >= need) { location.replace(best); } else { notFound(); }
+  }).catch(notFound);
+})();
+</script>
+</body>
+</html>
