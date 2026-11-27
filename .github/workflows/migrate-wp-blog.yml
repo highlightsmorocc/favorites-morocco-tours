@@ -1,0 +1,26 @@
+name: Migrate old WordPress blog articles
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['migration/run.txt']
+permissions:
+  contents: write
+concurrency:
+  group: migrate-wp
+  cancel-in-progress: false
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Migrate missing articles from WordPress
+        run: python3 migration/migrate.py
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && echo "nothing to commit" && exit 0
+          git commit -m "Migrate old WordPress blog articles (EN/ES) with local images"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
