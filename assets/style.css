@@ -1373,3 +1373,6 @@ html[data-theme="dark"] .dt-switch .dt-moon{display:block}
 @keyframes fmtRot{to{transform:rotate(360deg)}}
 @keyframes fmtPop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
 @media (min-width:768px){.fmt-toast{left:auto;right:28px;bottom:100px;transform:translateY(24px)}.fmt-toast.show{transform:translateY(0)}}
+
+/* Mobile: hide top contact bar (email + phone) */
+@media (max-width:768px){.fh-top{display:none!important}}
