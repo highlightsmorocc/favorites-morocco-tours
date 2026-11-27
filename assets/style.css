@@ -1376,3 +1376,8 @@ html[data-theme="dark"] .dt-switch .dt-moon{display:block}
 
 /* Mobile: hide top contact bar (email + phone) */
 @media (max-width:768px){.fh-top{display:none!important}}
+
+/* Booking modal: let the form scroll inside the box (mobile button was cut off) */
+.bk-box{grid-template-rows:minmax(0,1fr)}
+.bk-main,.bk-side{min-height:0}
+.bk-main{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
