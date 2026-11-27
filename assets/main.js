@@ -308,30 +308,41 @@
       tours: ["Sahara desert tour from Marrakech", "Tour from Fes", "Tour from Casablanca", "Tour from Tangier", "Tour from Errachidia", "Day trip", "Merzouga luxury camp packages", "Tailor-made trip"],
       ok: "Thank you! Your request has been sent.", ok2: "We will reply by email within 24 hours. For a faster answer, write to us on WhatsApp.",
       fail: "The form could not be sent. Tap below to send your request on WhatsApp, or write to contact@favoritesmoroccotours.com.",
-      trust: ["Reply within 24 h", "20% deposit, rest paid in Morocco", "Free cancellation up to 14 days"], or: "Prefer WhatsApp?", subject: "New tour request" },
+      trust: ["Reply within 24 h", "20% deposit, rest paid in Morocco", "Free cancellation up to 14 days"], or: "Prefer WhatsApp?", subject: "New tour request", miss: "Please fill in the required fields (name and email).", sending2: "Sending your request…", failT: "Not sent" },
     es: { kicker: "Solicitud de viaje privado", title: "Reserva tu viaje a Marruecos", sub: "Cuéntanos tus planes y te respondemos por email en menos de 24 horas con un itinerario a medida y el precio.",
       name: "Nombre completo", email: "Email", phone: "WhatsApp / teléfono", tour: "¿Qué quieres reservar?", date: "Fecha de llegada", adults: "Adultos", kids: "Niños", msg: "Tu mensaje",
       msgPh: "Ciudades que quieres ver, tipo de alojamiento, peticiones especiales...", send: "Enviar mi solicitud", sending: "Enviando...", close: "Cerrar",
       tours: ["Tour por el desierto desde Marrakech", "Tour desde Fez", "Tour desde Casablanca", "Tour desde Tánger", "Tour desde Errachidia", "Excursión de un día", "Paquetes campamento de lujo Merzouga", "Viaje a medida"],
       ok: "¡Gracias! Tu solicitud se ha enviado.", ok2: "Te responderemos por email en menos de 24 horas. Para una respuesta más rápida, escríbenos por WhatsApp.",
       fail: "No se pudo enviar el formulario. Pulsa abajo para enviar tu solicitud por WhatsApp, o escríbenos a contact@favoritesmoroccotours.com.",
-      trust: ["Respuesta en 24 h", "20% de depósito, resto en Marruecos", "Cancelación gratis hasta 14 días"], or: "¿Prefieres WhatsApp?", subject: "Nueva solicitud de viaje" },
+      trust: ["Respuesta en 24 h", "20% de depósito, resto en Marruecos", "Cancelación gratis hasta 14 días"], or: "¿Prefieres WhatsApp?", subject: "Nueva solicitud de viaje", miss: "Por favor, rellena los campos obligatorios (nombre y email).", sending2: "Enviando tu solicitud…", failT: "No enviado" },
     pt: { kicker: "Pedido de viagem privada", title: "Reserve sua viagem ao Marrocos", sub: "Conte seus planos e respondemos por e-mail em até 24 horas com um roteiro sob medida e o preço.",
       name: "Nome completo", email: "E-mail", phone: "WhatsApp / telefone", tour: "O que você quer reservar?", date: "Data de chegada", adults: "Adultos", kids: "Crianças", msg: "Sua mensagem",
       msgPh: "Cidades que quer conhecer, tipo de hospedagem, pedidos especiais...", send: "Enviar meu pedido", sending: "Enviando...", close: "Fechar",
       tours: ["Tour pelo deserto saindo de Marrakech", "Tour saindo de Fez", "Tour saindo de Casablanca", "Tour saindo de Tânger", "Tour saindo de Errachidia", "Passeio de um dia", "Pacotes acampamento de luxo Merzouga", "Viagem sob medida"],
       ok: "Obrigado! Seu pedido foi enviado.", ok2: "Responderemos por e-mail em até 24 horas. Para uma resposta mais rápida, fale conosco pelo WhatsApp.",
       fail: "Não foi possível enviar o formulário. Toque abaixo para enviar seu pedido pelo WhatsApp, ou escreva para contact@favoritesmoroccotours.com.",
-      trust: ["Resposta em 24 h", "Sinal de 20%, restante no Marrocos", "Cancelamento grátis até 14 dias"], or: "Prefere WhatsApp?", subject: "Novo pedido de viagem" },
+      trust: ["Resposta em 24 h", "Sinal de 20%, restante no Marrocos", "Cancelamento grátis até 14 dias"], or: "Prefere WhatsApp?", subject: "Novo pedido de viagem", miss: "Preencha os campos obrigatórios (nome e e-mail).", sending2: "Enviando seu pedido…", failT: "Não enviado" },
     it: { kicker: "Richiesta di viaggio privato", title: "Prenota il tuo viaggio in Marocco", sub: "Raccontaci i tuoi piani: ti rispondiamo via email entro 24 ore con un itinerario su misura e il prezzo.",
       name: "Nome e cognome", email: "Email", phone: "WhatsApp / telefono", tour: "Cosa vuoi prenotare?", date: "Data di arrivo", adults: "Adulti", kids: "Bambini", msg: "Il tuo messaggio",
       msgPh: "Città che vuoi vedere, tipo di alloggio, richieste speciali...", send: "Invia la richiesta", sending: "Invio in corso...", close: "Chiudi",
       tours: ["Tour nel deserto da Marrakech", "Tour da Fes", "Tour da Casablanca", "Tour da Tangeri", "Tour da Errachidia", "Escursione di un giorno", "Pacchetti campo di lusso Merzouga", "Viaggio su misura"],
       ok: "Grazie! La tua richiesta è stata inviata.", ok2: "Ti risponderemo via email entro 24 ore. Per una risposta più rapida, scrivici su WhatsApp.",
       fail: "Non è stato possibile inviare il modulo. Tocca qui sotto per inviare la richiesta su WhatsApp, oppure scrivi a contact@favoritesmoroccotours.com.",
-      trust: ["Risposta entro 24 h", "Acconto del 20%, saldo in Marocco", "Cancellazione gratuita fino a 14 giorni"], or: "Preferisci WhatsApp?", subject: "Nuova richiesta di viaggio" }
+      trust: ["Risposta entro 24 h", "Acconto del 20%, saldo in Marocco", "Cancellazione gratuita fino a 14 giorni"], or: "Preferisci WhatsApp?", subject: "Nuova richiesta di viaggio", miss: "Compila i campi obbligatori (nome ed email).", sending2: "Invio della richiesta…", failT: "Non inviato" }
   };
   var t = S[lang] || S.en;
+  /* Toast notification for form feedback */
+  var fmtT, fmtTimer;
+  function toast(type, title, text) {
+    if (!fmtT) { fmtT = document.createElement("div"); fmtT.className = "fmt-toast"; fmtT.setAttribute("role", "status"); fmtT.setAttribute("aria-live", "polite"); document.body.appendChild(fmtT); }
+    var icon = type === "load" ? '<span class="fmt-spin"></span>' : type === "ok" ? '<span class="fmt-ti ok">\u2713</span>' : '<span class="fmt-ti bad">!</span>';
+    fmtT.className = "fmt-toast is-" + type;
+    fmtT.innerHTML = icon + '<div><strong>' + title + '</strong>' + (text ? '<p>' + text + '</p>' : '') + '</div>';
+    void fmtT.offsetWidth; fmtT.classList.add("show");
+    clearTimeout(fmtTimer);
+    if (type !== "load") fmtTimer = setTimeout(function () { fmtT.classList.remove("show"); }, type === "ok" ? 7000 : 6000);
+  }
   var me = document.querySelector('script[src*="assets/main.js"]');
   var root = me ? me.getAttribute("src").replace(/assets\/main\.js.*$/, "") : "";
   var today = new Date().toISOString().slice(0, 10);
@@ -397,10 +408,10 @@
     e.preventDefault();
     var err = form.querySelector(".bk-err"); err.hidden = true;
     form.querySelectorAll("[required]").forEach(function (f) { f.classList.toggle("bk-bad", !f.checkValidity()); });
-    if (!form.checkValidity()) { var bad = form.querySelector(".bk-bad"); if (bad) bad.focus(); return; }
+    if (!form.checkValidity()) { var bad = form.querySelector(".bk-bad"); if (bad) bad.focus(); toast("bad", t.failT, t.miss); return; }
     if (form._honey.value) return;
     var btn = form.querySelector(".bk-send"), lbl = btn.querySelector("span");
-    btn.disabled = true; lbl.textContent = t.sending;
+    btn.disabled = true; lbl.textContent = t.sending; toast("load", t.sending2);
     var data = {};
     new FormData(form).forEach(function (v, k) { if (k !== "_honey") data[k] = esc(v); });
     data._subject = t.subject + " – " + data.tour + " – " + data.name;
@@ -408,9 +419,9 @@
     data.page = location.href; data.language = lang.toUpperCase();
     fetch("https://formsubmit.co/ajax/" + FS, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
       .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error("fail"); }); })
-      .then(function () { bk.querySelector(".bk-form-wrap").hidden = true; bk.querySelector(".bk-done").hidden = false; form.reset(); })
+      .then(function () { bk.querySelector(".bk-form-wrap").hidden = true; bk.querySelector(".bk-done").hidden = false; form.reset(); toast("ok", t.ok, t.ok2); })
       .catch(function () {
-        err.textContent = t.fail; err.hidden = false;
+        err.textContent = t.fail; err.hidden = false; toast("bad", t.failT, t.fail);
         var body = ["name", "email", "phone", "arrival", "tour", "adults", "children", "message"].map(function (k) { return k + ": " + (data[k] || ""); }).join("\n");
         fmtWaBtn(err, data._subject + "\n" + body);
       })
@@ -422,9 +433,9 @@
     pf.addEventListener("submit", function (e) {
       e.preventDefault();
       if (pf._honey && pf._honey.value) return;
-      if (!pf.checkValidity()) { pf.reportValidity(); return; }
+      if (!pf.checkValidity()) { pf.reportValidity(); toast("bad", t.failT, t.miss); return; }
       var btn = pf.querySelector("button[type=submit]"), old = btn.innerHTML;
-      btn.disabled = true; btn.textContent = t.sending;
+      btn.disabled = true; btn.textContent = t.sending; toast("load", t.sending2);
       var d = {};
       new FormData(pf).forEach(function (v, k) { if (k !== "_honey" && v) d[k] = esc(v); });
       var who = d.Name || d.Nombre || d.Nome || "";
@@ -433,6 +444,7 @@
       fetch("https://formsubmit.co/ajax/" + FS, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(d) })
         .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error("fail"); }); })
         .then(function () {
+          toast("ok", t.ok, t.ok2);
           pf.innerHTML = '<div class="pf-done"><div class="bk-done-ico">' + ico.check + '</div><h3>' + t.ok + '</h3><p>' + t.ok2 + '</p></div>';
         })
         .catch(function () {
@@ -440,7 +452,7 @@
           var body = Object.keys(d).filter(function (k) { return k.charAt(0) !== "_"; }).map(function (k) { return k + ": " + d[k]; }).join("\n");
           var pe = pf.querySelector(".pf-err");
           if (!pe) { pe = document.createElement("p"); pe.className = "pf-err bk-err"; pe.setAttribute("role", "alert"); btn.insertAdjacentElement("afterend", pe); }
-          pe.textContent = t.fail; pe.hidden = false;
+          pe.textContent = t.fail; pe.hidden = false; toast("bad", t.failT, t.fail);
           fmtWaBtn(pe, d._subject + "\n" + body);
         });
     });
