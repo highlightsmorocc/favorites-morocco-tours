@@ -292,7 +292,7 @@
 
 /* Favorites Morocco Tours - "Book your tour" email form (bk-) */
 (function () {
-  var MAIL = "contact@favoritesmoroccotours.com";
+  var MAIL = "contact@favoritesmoroccotours.com", FS = "f7d5c08fb5cfd9ab121b320069439439";
   var lang = (document.documentElement.lang || "en").slice(0, 2);
   var S = {
     en: { kicker: "Private tour request", title: "Book your Morocco tour", sub: "Tell us your plans and we reply by email within 24 hours with a tailor-made itinerary and price.",
@@ -399,7 +399,7 @@
     data._subject = t.subject + " – " + data.tour + " – " + data.name;
     data._replyto = data.email; data._template = "table"; data._captcha = "false";
     data.page = location.href; data.language = lang.toUpperCase();
-    fetch("https://formsubmit.co/ajax/" + MAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
+    fetch("https://formsubmit.co/ajax/" + FS, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
       .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error("fail"); }); })
       .then(function () { bk.querySelector(".bk-form-wrap").hidden = true; bk.querySelector(".bk-done").hidden = false; form.reset(); })
       .catch(function () {
@@ -423,7 +423,7 @@
       var who = d.Name || d.Nombre || d.Nome || "";
       d._subject = t.subject + " – " + who; d._replyto = d.Email || ""; d._template = "table"; d._captcha = "false";
       d.page = location.href; d.language = lang.toUpperCase();
-      fetch("https://formsubmit.co/ajax/" + MAIL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(d) })
+      fetch("https://formsubmit.co/ajax/" + FS, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(d) })
         .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error("fail"); }); })
         .then(function () {
           pf.innerHTML = '<div class="pf-done"><div class="bk-done-ico">' + ico.check + '</div><h3>' + t.ok + '</h3><p>' + t.ok2 + '</p></div>';
