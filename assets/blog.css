@@ -35,8 +35,9 @@ html[data-theme="dark"] .bx{--bx-navy:#e8f1f6;--bx-card:#132634;--bx-ink:#dfe8ee
 
 /* day-count steps */
 .bx-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.bx-steps a{display:flex;align-items:center;gap:16px;padding:14px 18px 14px 14px;border-radius:18px;background:var(--bx-card);border:1px solid var(--bx-line);text-decoration:none;color:var(--bx-ink);box-shadow:0 8px 22px rgba(0,0,0,.05);transition:all .3s ease}
+.bx-steps a,.bx-steps li>div{display:flex;align-items:center;gap:16px;padding:14px 18px 14px 14px;border-radius:18px;background:var(--bx-card);border:1px solid var(--bx-line);text-decoration:none;color:var(--bx-ink);box-shadow:0 8px 22px rgba(0,0,0,.05);transition:all .3s ease}
 .bx-steps a:hover{transform:translateX(5px);border-color:rgba(251,133,0,.55)}
+.bx-steps li>div{cursor:default}
 .bx-pill{flex:none;min-width:92px;padding:10px 10px;border-radius:14px;background:#023047;color:var(--bx-amber);text-align:center;font:600 1.05rem/1.1 Oswald,sans-serif;letter-spacing:.02em}
 .bx-steps b{display:block;color:var(--bx-navy);font-size:1.05rem}
 .bx-steps small{display:block;margin-top:2px;color:var(--bx-muted);font-size:.92rem;line-height:1.4}
