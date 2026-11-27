@@ -58,3 +58,28 @@ html[data-theme="dark"] .bx{--bx-navy:#e8f1f6;--bx-card:#132634;--bx-ink:#dfe8ee
 .bx-check li{display:inline-flex;align-items:center;gap:9px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--bx-card);border:1px solid var(--bx-line);color:var(--bx-ink);font-weight:600;box-shadow:0 6px 16px rgba(0,0,0,.04)}
 .bx-check li::before{content:"✓";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--bx-grad);color:#023047;font-size:.78rem;font-weight:800}
 @media (max-width:560px){.bx-steps a{align-items:flex-start}.bx-pill{min-width:76px}}
+
+/* Migrated WordPress articles (wp-article) */
+.wp-article{font-size:1.04rem;line-height:1.75}
+.wp-article h2{margin:2.2em 0 .6em;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.4rem,2.6vw,1.85rem);line-height:1.25;color:var(--bx-navy)}
+.wp-article h3{margin:1.6em 0 .5em;font-size:1.2rem;color:var(--bx-navy)}
+.wp-article p,.wp-article ul,.wp-article ol{margin:0 0 1.1em}
+.wp-article ul,.wp-article ol{padding-left:1.3em}
+.wp-article li{margin:.35em 0}
+.wp-article a{color:#c47f00;text-decoration:underline;text-underline-offset:3px;transition:all .3s ease}
+.wp-article a:hover{color:var(--bx-orange)}
+.wp-article img{max-width:100%;height:auto;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);margin:1em 0}
+.wp-article figure{margin:1.4em 0}
+.wp-article figcaption{font-size:.85rem;color:var(--bx-muted);text-align:center;margin-top:-.4em}
+.wp-article iframe{max-width:100%;border:0;border-radius:16px}
+.wp-article blockquote{margin:1.4em 0;padding:16px 22px;border-left:4px solid var(--bx-amber);background:rgba(255,183,3,.08);border-radius:0 14px 14px 0}
+.wp-article .destacado{margin:1.4em 0;padding:18px 22px;border-radius:16px;background:linear-gradient(135deg,rgba(255,183,3,.12),rgba(251,133,0,.08));border:1px solid rgba(255,183,3,.35)}
+.wp-article .faq{margin:1.6em 0}
+.wp-article .pregunta{font-weight:700;color:var(--bx-navy);margin:1.2em 0 .3em}
+.wp-article .cta{margin:1.6em 0;padding:22px;border-radius:18px;background:var(--bx-navy);color:#fff}
+.wp-article .cta a{color:var(--bx-amber)}
+.wp-cta-box{margin:2.4em 0 0;padding:28px;border-radius:20px;background:linear-gradient(135deg,#023047,#0b4a6b);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.wp-cta-box h2{margin:0 0 .4em!important;color:#fff!important}
+.wp-cta-box p{color:rgba(255,255,255,.85)}
+.wp-cta-box .tp-btn{text-decoration:none;display:inline-flex}
+html[data-theme="dark"] .wp-article h2,html[data-theme="dark"] .wp-article h3,html[data-theme="dark"] .wp-article .pregunta{color:#fff}
