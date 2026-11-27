@@ -292,7 +292,7 @@
 
 /* Favorites Morocco Tours - "Book your tour" email form (bk-) */
 (function () {
-  var MAIL = "favoritesmoroccotours@gmail.com";
+  var MAIL = "contact@favoritesmoroccotours.com";
   var lang = (document.documentElement.lang || "en").slice(0, 2);
   var S = {
     en: { kicker: "Private tour request", title: "Book your Morocco tour", sub: "Tell us your plans and we reply by email within 24 hours with a tailor-made itinerary and price.",
