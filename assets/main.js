@@ -430,6 +430,7 @@
 
   /* Page forms (home + contact) -> email */
   document.querySelectorAll("form[data-mail]").forEach(function (pf) {
+    pf.noValidate = true;
     pf.addEventListener("submit", function (e) {
       e.preventDefault();
       if (pf._honey && pf._honey.value) return;
