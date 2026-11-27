@@ -2304,4 +2304,40 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://favoritesmoroccotours.com/it/meteo-in-marocco/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://favoritesmoroccotours.com/morocco-weather/"/>
   </url>
+  <url>
+    <loc>https://favoritesmoroccotours.com/morocco-tour-packages/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://favoritesmoroccotours.com/es/paquetes-turisticos-a-marruecos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://favoritesmoroccotours.com/pt/pacotes-turisticos-para-o-marrocos/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://favoritesmoroccotours.com/it/pacchetti-viaggio-marocco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+  </url>
+  <url>
+    <loc>https://favoritesmoroccotours.com/es/paquetes-turisticos-a-marruecos/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://favoritesmoroccotours.com/es/paquetes-turisticos-a-marruecos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://favoritesmoroccotours.com/pt/pacotes-turisticos-para-o-marrocos/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://favoritesmoroccotours.com/it/pacchetti-viaggio-marocco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+  </url>
+  <url>
+    <loc>https://favoritesmoroccotours.com/pt/pacotes-turisticos-para-o-marrocos/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://favoritesmoroccotours.com/es/paquetes-turisticos-a-marruecos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://favoritesmoroccotours.com/pt/pacotes-turisticos-para-o-marrocos/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://favoritesmoroccotours.com/it/pacchetti-viaggio-marocco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+  </url>
+  <url>
+    <loc>https://favoritesmoroccotours.com/it/pacchetti-viaggio-marocco/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://favoritesmoroccotours.com/es/paquetes-turisticos-a-marruecos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://favoritesmoroccotours.com/pt/pacotes-turisticos-para-o-marrocos/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://favoritesmoroccotours.com/it/pacchetti-viaggio-marocco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://favoritesmoroccotours.com/morocco-tour-packages/"/>
+  </url>
 </urlset>
