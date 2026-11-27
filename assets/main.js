@@ -292,6 +292,13 @@
 
 /* Favorites Morocco Tours - "Book your tour" email form (bk-) */
 (function () {
+  function fmtWaBtn(box, text) {
+    var a = document.createElement("a");
+    a.className = "fmt-wa-fallback"; a.target = "_blank"; a.rel = "noopener";
+    a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(text);
+    a.textContent = "WhatsApp \u2192";
+    box.appendChild(document.createElement("br")); box.appendChild(a);
+  }
   var MAIL = "contact@favoritesmoroccotours.com", FS = "f7d5c08fb5cfd9ab121b320069439439";
   var lang = (document.documentElement.lang || "en").slice(0, 2);
   var S = {
@@ -300,28 +307,28 @@
       msgPh: "Cities you want to see, hotel style, special requests...", send: "Send my request", sending: "Sending...", close: "Close",
       tours: ["Sahara desert tour from Marrakech", "Tour from Fes", "Tour from Casablanca", "Tour from Tangier", "Tour from Errachidia", "Day trip", "Merzouga luxury camp packages", "Tailor-made trip"],
       ok: "Thank you! Your request has been sent.", ok2: "We will reply by email within 24 hours. For a faster answer, write to us on WhatsApp.",
-      fail: "The form could not be sent. Your email app will open with your request ready to send.",
+      fail: "The form could not be sent. Tap below to send your request on WhatsApp, or write to contact@favoritesmoroccotours.com.",
       trust: ["Reply within 24 h", "20% deposit, rest paid in Morocco", "Free cancellation up to 14 days"], or: "Prefer WhatsApp?", subject: "New tour request" },
     es: { kicker: "Solicitud de viaje privado", title: "Reserva tu viaje a Marruecos", sub: "Cuéntanos tus planes y te respondemos por email en menos de 24 horas con un itinerario a medida y el precio.",
       name: "Nombre completo", email: "Email", phone: "WhatsApp / teléfono", tour: "¿Qué quieres reservar?", date: "Fecha de llegada", adults: "Adultos", kids: "Niños", msg: "Tu mensaje",
       msgPh: "Ciudades que quieres ver, tipo de alojamiento, peticiones especiales...", send: "Enviar mi solicitud", sending: "Enviando...", close: "Cerrar",
       tours: ["Tour por el desierto desde Marrakech", "Tour desde Fez", "Tour desde Casablanca", "Tour desde Tánger", "Tour desde Errachidia", "Excursión de un día", "Paquetes campamento de lujo Merzouga", "Viaje a medida"],
       ok: "¡Gracias! Tu solicitud se ha enviado.", ok2: "Te responderemos por email en menos de 24 horas. Para una respuesta más rápida, escríbenos por WhatsApp.",
-      fail: "No se pudo enviar el formulario. Se abrirá tu aplicación de correo con la solicitud lista para enviar.",
+      fail: "No se pudo enviar el formulario. Pulsa abajo para enviar tu solicitud por WhatsApp, o escríbenos a contact@favoritesmoroccotours.com.",
       trust: ["Respuesta en 24 h", "20% de depósito, resto en Marruecos", "Cancelación gratis hasta 14 días"], or: "¿Prefieres WhatsApp?", subject: "Nueva solicitud de viaje" },
     pt: { kicker: "Pedido de viagem privada", title: "Reserve sua viagem ao Marrocos", sub: "Conte seus planos e respondemos por e-mail em até 24 horas com um roteiro sob medida e o preço.",
       name: "Nome completo", email: "E-mail", phone: "WhatsApp / telefone", tour: "O que você quer reservar?", date: "Data de chegada", adults: "Adultos", kids: "Crianças", msg: "Sua mensagem",
       msgPh: "Cidades que quer conhecer, tipo de hospedagem, pedidos especiais...", send: "Enviar meu pedido", sending: "Enviando...", close: "Fechar",
       tours: ["Tour pelo deserto saindo de Marrakech", "Tour saindo de Fez", "Tour saindo de Casablanca", "Tour saindo de Tânger", "Tour saindo de Errachidia", "Passeio de um dia", "Pacotes acampamento de luxo Merzouga", "Viagem sob medida"],
       ok: "Obrigado! Seu pedido foi enviado.", ok2: "Responderemos por e-mail em até 24 horas. Para uma resposta mais rápida, fale conosco pelo WhatsApp.",
-      fail: "Não foi possível enviar o formulário. Seu aplicativo de e-mail vai abrir com o pedido pronto para enviar.",
+      fail: "Não foi possível enviar o formulário. Toque abaixo para enviar seu pedido pelo WhatsApp, ou escreva para contact@favoritesmoroccotours.com.",
       trust: ["Resposta em 24 h", "Sinal de 20%, restante no Marrocos", "Cancelamento grátis até 14 dias"], or: "Prefere WhatsApp?", subject: "Novo pedido de viagem" },
     it: { kicker: "Richiesta di viaggio privato", title: "Prenota il tuo viaggio in Marocco", sub: "Raccontaci i tuoi piani: ti rispondiamo via email entro 24 ore con un itinerario su misura e il prezzo.",
       name: "Nome e cognome", email: "Email", phone: "WhatsApp / telefono", tour: "Cosa vuoi prenotare?", date: "Data di arrivo", adults: "Adulti", kids: "Bambini", msg: "Il tuo messaggio",
       msgPh: "Città che vuoi vedere, tipo di alloggio, richieste speciali...", send: "Invia la richiesta", sending: "Invio in corso...", close: "Chiudi",
       tours: ["Tour nel deserto da Marrakech", "Tour da Fes", "Tour da Casablanca", "Tour da Tangeri", "Tour da Errachidia", "Escursione di un giorno", "Pacchetti campo di lusso Merzouga", "Viaggio su misura"],
       ok: "Grazie! La tua richiesta è stata inviata.", ok2: "Ti risponderemo via email entro 24 ore. Per una risposta più rapida, scrivici su WhatsApp.",
-      fail: "Non è stato possibile inviare il modulo. Si aprirà la tua app di posta con la richiesta pronta da inviare.",
+      fail: "Non è stato possibile inviare il modulo. Tocca qui sotto per inviare la richiesta su WhatsApp, oppure scrivi a contact@favoritesmoroccotours.com.",
       trust: ["Risposta entro 24 h", "Acconto del 20%, saldo in Marocco", "Cancellazione gratuita fino a 14 giorni"], or: "Preferisci WhatsApp?", subject: "Nuova richiesta di viaggio" }
   };
   var t = S[lang] || S.en;
@@ -405,7 +412,7 @@
       .catch(function () {
         err.textContent = t.fail; err.hidden = false;
         var body = ["name", "email", "phone", "arrival", "tour", "adults", "children", "message"].map(function (k) { return k + ": " + (data[k] || ""); }).join("\n");
-        setTimeout(function () { location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(data._subject) + "&body=" + encodeURIComponent(body); }, 900);
+        fmtWaBtn(err, data._subject + "\n" + body);
       })
       .then(function () { btn.disabled = false; lbl.textContent = t.send; });
   });
@@ -431,7 +438,10 @@
         .catch(function () {
           btn.disabled = false; btn.innerHTML = old;
           var body = Object.keys(d).filter(function (k) { return k.charAt(0) !== "_"; }).map(function (k) { return k + ": " + d[k]; }).join("\n");
-          location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(d._subject) + "&body=" + encodeURIComponent(body);
+          var pe = pf.querySelector(".pf-err");
+          if (!pe) { pe = document.createElement("p"); pe.className = "pf-err bk-err"; pe.setAttribute("role", "alert"); btn.insertAdjacentElement("afterend", pe); }
+          pe.textContent = t.fail; pe.hidden = false;
+          fmtWaBtn(pe, d._subject + "\n" + body);
         });
     });
   });

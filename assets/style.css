@@ -1353,3 +1353,8 @@ html[data-theme="dark"] .dt-switch .dt-moon{display:block}
 .dt-switch:active .dt-knob svg{transform:rotate(90deg)}
 .fh-right{display:flex;align-items:center}
 /* ===== /dt ===== */
+
+/* Form fallback: WhatsApp button when email sending fails */
+.pf-err{margin-top:14px;color:#b42318;font-size:.92rem;line-height:1.5}
+.fmt-wa-fallback{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:10px 20px;border-radius:999px;background:#25D366;color:#fff!important;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:all .3s ease}
+.fmt-wa-fallback:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(37,211,102,.35)}
